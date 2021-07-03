@@ -65,7 +65,7 @@ jd_scripts:
     - MARKET_COIN_TO_BEANS=1000
     
     
-    #瓜分京豆
+    #抢京豆
     - qjd_zlzh=['']
     
     #取关店铺和商品
