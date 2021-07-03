@@ -1,7 +1,3 @@
-docker pull sanbing666/scripts  
-Docker-compose install lxk0301  
-dockerhub: https://hub.docker.com/r/sanbing666/scripts  
-
 ## Special statement:
 
 * Any unlocking and decryption analysis scripts involved in the Script project released by this warehouse are only used for testing, learning and research, and are forbidden to be used for commercial purposes. Their legality, accuracy, completeness and effectiveness cannot be guaranteed. Please make your own judgment based on the situation. .
@@ -36,3 +32,7 @@ dockerhub: https://hub.docker.com/r/sanbing666/scripts
 * [@uniqueque](https://github.com/uniqueque)
 
 * [@nzw9314](https://github.com/nzw9314)
+
+docker pull sanbing666/scripts  
+Docker-compose install lxk0301  
+dockerhub: https://hub.docker.com/r/sanbing666/scripts
