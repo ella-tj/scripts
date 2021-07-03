@@ -142,4 +142,4 @@
 # 京享值PK
 15 6,13,21 * * * node /scripts/m_pk.js >> /scripts/logs/m_pk.log 2>&1
 #挖现金
-0 0 * * * node /scripts/m_wxj.js >> /scripts/logs/m_wxj.log 2>&1
+#0 0 * * * node /scripts/m_wxj.js >> /scripts/logs/m_wxj.log 2>&1
