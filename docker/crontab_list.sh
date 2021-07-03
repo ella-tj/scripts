@@ -25,6 +25,8 @@
 #30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #女装盲盒7.1-7.30
 35 1,23 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
+#点点券
+35 1,2,3, * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 ##############长期活动##############
 # 签到
 7 6,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
