@@ -35,4 +35,4 @@
 
 docker pull sanbing666/scripts  
 Docker-compose install lxk0301  
-dockerhub: https://hub.docker.com/r/sanbing666/scripts
+[docker-compose.yml](https://github.com/sanbing666/scripts/blob/main/docker/example/docker-compose.yml)  
