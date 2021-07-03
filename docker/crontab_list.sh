@@ -129,8 +129,8 @@
 15 10 * * * node /scripts/m_1.js >> /scripts/logs/m_1.log 2>&1
 # 试用
 30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
-# 瓜分京豆
-#1 0 * * * python3 /scripts/m_gfjd.py >> /scripts/logs/m_gfjd.log 2>&1
+# 抢京豆
+1 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
 # 京东到家
 */5 * * * * node /scripts/jddj_getPoints.js >> /scripts/logs/jddj_getPoints.log 2>&1
 */5 * * * * node /scripts/jddj_fruit_collectWater.js >> /scripts/logs/jddj_fruit_collectWater.log 2>&1
