@@ -33,6 +33,7 @@ jd_scripts:
     - JD_USER_AGENT=
     #不执行的脚本
     - DO_NOT_RUN_SCRIPTS=
+    #试用不执行的账号
     - DONOT_TRY_ACCOUNT=
     #单容器多账号自动互助
     - ENABLE_AUTO_HELP=true
