@@ -143,3 +143,5 @@
 15 6,13,21 * * * node /scripts/m_pk.js >> /scripts/logs/m_pk.log 2>&1
 #挖现金
 #0 0 * * * node /scripts/m_wxj.js >> /scripts/logs/m_wxj.log 2>&1
+#领现金助力
+0 0 * * * python3 /scripts/m_cashhelp.py >> /scripts/logs/m_cashhelp.py 2>&1
