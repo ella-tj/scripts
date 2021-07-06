@@ -18,9 +18,9 @@ else
   git -C /scripts pull --rebase
   echo "npm install 安装最新依赖"
   npm install --prefix /scripts
-  npm audit fix
-  echo "复制依赖文件夹"
+  echo "复制依赖文件夹到前端扫码"
   cp -r /scripts/node_modules /scripts/QRcookie
+  npm audit fix
 fi
 ) || exit 0
 
