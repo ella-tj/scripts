@@ -18,10 +18,8 @@ else
   git -C /scripts pull --rebase
   echo "npm install 安装最新依赖"
   npm install --prefix /scripts
-  npm audit fix
   echo "npm install 安装扫码依赖"
-  cd QRcookie
-  npm install
+  npm install --prefix /scripts/QRcookie
   npm audit fix
 fi
 ) || exit 0
