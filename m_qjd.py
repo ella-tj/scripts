@@ -350,7 +350,7 @@ def start():
         message(f"账号【{i}】已抢京豆: {userCount[i]}")
     message(f"## 今日累计获得 {beanCount} 京豆")
     try:
-        send(scriptName, message_info)
+        send(scriptName)
     except:
         pass
 
