@@ -26,7 +26,7 @@ else
    fi
 fi
 
-echo "处理前端扫码"
+echo "处理前端扫码。。。"
 if [ ! $QRcookie_ENABLE ]; then
       eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
       echo "默认不启用前端扫码任务，仅杀掉"
@@ -37,8 +37,5 @@ else
       echo '' >/scripts/logs/QRcookie.log
       $CMD /scripts/QRcookie/index.js | ts >>/scripts/logs/QRcookie.log 2>&1 &
       echo "配置前端扫码重启完成"
-   else
-      eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
-      echo "已配置不启用前端扫码任务，仅杀掉"
    fi
 fi
