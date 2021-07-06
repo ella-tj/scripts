@@ -57,7 +57,7 @@
 # 京豆变动月通知
 30 9 1 * * node /scripts/jd_bean_change_m.js >> /scripts/logs/jd_bean_change_m.log 2>&1
 # 京东抽奖机
-0 0,12,23 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
+11 1 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东排行榜
 21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
 # 天天提鹅
