@@ -34,5 +34,4 @@
 * [@nzw9314](https://github.com/nzw9314)
 
 docker pull sanbing666/scripts  
-Docker-compose install lxk0301  
 [docker-compose.yml](https://github.com/sanbing666/scripts/blob/main/docker/example/docker-compose.yml)  
