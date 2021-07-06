@@ -19,6 +19,9 @@ else
   echo "npm install 安装最新依赖"
   npm install --prefix /scripts
   npm audit fix
+  echo "npm install 安装扫码依赖"
+  cd QRcookie
+  npm install
 fi
 ) || exit 0
 
