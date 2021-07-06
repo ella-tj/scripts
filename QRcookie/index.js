@@ -1,6 +1,6 @@
 // 填入你的配置，或者通过环境变量传入
 const QYWX_KEY = '' || process.env.QYWX_KEY;
-const QR_QR_QYWX_AM = '' || process.env.QR_QYWX_AM;
+const QR_QYWX_AM = '' || process.env.QR_QYWX_AM;
 const UPDATE_API = '' || process.env.UPDATE_API;
 
 const express = require('express');
@@ -215,7 +215,7 @@ async function sendMsg(updateMsg, cookie, userMsg) {
   }
   if (QR_QYWX_AM) {
     try {
-      const [corpid, corpsecret, userId, agentid] = QR_QR_QYWX_AM.split(',');
+      const [corpid, corpsecret, userId, agentid] = QR_QYWX_AM.split(',');
       const getToken = await got.post({
         url: `https://qyapi.weixin.qq.com/cgi-bin/gettoken`,
         json: {
