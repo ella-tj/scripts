@@ -49,6 +49,8 @@ jd_scripts:
     - DD_BOT_SECRET=
     #企业微信机器人通知
     - QYWX_AM=
+    #扫码企业微信通知
+    - QR_QYWX_AM=
     #京东种豆得豆
     - PLANT_BEAN_SHARECODES=
     #宠汪汪是否赛跑
