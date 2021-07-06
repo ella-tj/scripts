@@ -9,6 +9,9 @@ jd_scripts:
   #       memory: 200M
   container_name: jd_scripts
   restart: always
+  #扫码映射端口
+  ports:
+    - 6789:6789
   volumes:
     - ./logs:/scripts/logs
   tty: true
