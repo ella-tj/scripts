@@ -60,7 +60,7 @@ beanCount = 0
 userCount = {}
 
 ######## 获取通知模块
-message_info = ''''''
+#message_info = ''''''
 def message(str_msg):
     global message_info
     print(str_msg)
@@ -349,8 +349,8 @@ def start():
     for i in userCount.keys():
         message(f"账号【{i}】已抢京豆: {userCount[i]}")
     message(f"## 今日累计获得 {beanCount} 京豆")
-    #try:
-        #send(scriptName, message_info)
+    try:
+        send(scriptName, message_info)
     except:
         pass
 
