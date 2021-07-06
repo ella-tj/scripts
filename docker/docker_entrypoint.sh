@@ -22,6 +22,7 @@ else
   echo "npm install 安装扫码依赖"
   cd QRcookie
   npm install
+  npm audit fix
 fi
 ) || exit 0
 
