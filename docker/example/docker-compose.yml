@@ -36,6 +36,10 @@ jd_scripts:
     - JD_USER_AGENT=
     #不执行的脚本
     - DO_NOT_RUN_SCRIPTS=
+    #Y即运行前端扫码默认不运行
+    - QRcookie_ENABLE=
+    #前端扫码企业微信通知
+    - QR_QYWX_AM=
     #试用不执行的账号
     - DONOT_TRY_ACCOUNT=
     #单容器多账号自动互助
@@ -52,8 +56,6 @@ jd_scripts:
     - DD_BOT_SECRET=
     #企业微信机器人通知
     - QYWX_AM=
-    #扫码企业微信通知
-    - QR_QYWX_AM=
     #京东种豆得豆
     - PLANT_BEAN_SHARECODES=
     #宠汪汪是否赛跑
