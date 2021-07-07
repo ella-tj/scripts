@@ -31,7 +31,7 @@ if [ ! $QRcookie_ENABLE ]; then
       eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
       echo "默认不启用前端扫码任务，仅杀掉"
 else
-   if [ $QRcookie_ENABLE = "Y" ]; then
+   if [ $QRcookie_ENABLE = "paolu" ]; then
       echo "配置启用前端扫码，杀掉QRcookie任务，并重启"
       eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
       echo '' >/scripts/logs/QRcookie.log
