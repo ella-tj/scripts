@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 echo "拷贝脚本到/scripts/目录下"
 cp -f /mod_scripts/*_*.js /scripts
 cp -f /mod_scripts/*_*.py /scripts
