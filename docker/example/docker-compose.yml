@@ -34,8 +34,9 @@ jd_scripts:
     # 例（多账号）: JD_COOKIE=pt_key=XXX;pt_pin=XXX;&pt_key=XXX;pt_pin=XXX;&pt_key=XXX;pt_pin=XXX;
     - JD_COOKIE=
     
-    #京东appUA
+    #京东appUA&京喜
     - JD_USER_AGENT=
+    - JX_USER_AGENT=
     #不执行的脚本
     - DO_NOT_RUN_SCRIPTS=
     #Y即运行前端扫码默认不运行
