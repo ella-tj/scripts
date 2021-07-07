@@ -6,5 +6,5 @@
 
 - 2021.7.6  
 映射前端扫码端口`ports:- 6789:6789`  
-前端扫码变量`QRcookie_ENABLE`，值为`Y`才开放，默认不开放  
+前端扫码变量`QRcookie_ENABLE`，值为`paolu`才开放，默认不开放  
 前端扫码企业微信通知`QR_QYWX_AM`(企业ID,应用Secret,成员ID,应用AgentId)
