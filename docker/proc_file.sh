@@ -39,6 +39,6 @@ else
       echo "配置前端扫码重启完成"
    else
       eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
-      echo "已配置不启用jd_crazy_joy_coin任务，仅杀掉"
+      echo "已配置不启用前端扫码，仅杀掉"
    fi
 fi
