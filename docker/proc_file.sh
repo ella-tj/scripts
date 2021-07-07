@@ -37,5 +37,8 @@ else
       echo '' >/scripts/logs/QRcookie.log
       $CMD /scripts/QRcookie/index.js | ts >>/scripts/logs/QRcookie.log 2>&1 &
       echo "配置前端扫码重启完成"
+   else
+      eval $(ps -ef | grep "index" | grep -v "grep" | awk '{print "kill "$1}')
+      echo "已配置不启用jd_crazy_joy_coin任务，仅杀掉"
    fi
 fi
