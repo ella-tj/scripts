@@ -124,6 +124,8 @@
 #15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜牧场
 15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
+# 送豆得豆
+45 4 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # mod脚本执行区
 # 京喜单独开团
 2-52/25 0-1 * * * node /scripts/m_jxkt.js >> /scripts/logs/m_jxkt.log 2>&1
