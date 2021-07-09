@@ -132,7 +132,7 @@
 # 京喜单独开团
 2-52/25 0-1 * * * node /scripts/m_jxkt.js >> /scripts/logs/m_jxkt.log 2>&1
 # 东东电竞经理
-15 10 * * * node /scripts/m_1.js >> /scripts/logs/m_1.log 2>&1
+15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 试用
 30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
 # 抢京豆
