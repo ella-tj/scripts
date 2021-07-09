@@ -151,3 +151,5 @@
 0 0 * * * python3 /scripts/m_cashHelp.py >> /scripts/logs/m_cashHelp.log 2>&1
 #狂欢欧洲杯
 57 59 9  * * * node /scripts/m_europeancup.js >> /scripts/logs/m_europeancup.log 2>&1
+#粉丝互动
+1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
