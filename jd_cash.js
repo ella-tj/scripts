@@ -27,10 +27,12 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let helpAuthor = true;
-const randomCount = $.isNode() ? 5 : 5;
+let helpAuthor = false;
+const randomCount = $.isNode() ? 0 : 5;
 let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
-const inviteCodes = ['']
+const inviteCodes = [
+  ``
+]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -349,11 +351,11 @@ function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://code.chiang.fun/api/v1/jd/jdcash/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+      // console.log(`${JSON.stringify(err)}`)
+      // console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
             console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
@@ -456,7 +458,7 @@ function taskUrl(functionId, body = {}) {
   }
 }
 
-function getAuthorShareCode(url) {
+function getAuthorShareCode(url = "") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
@@ -465,7 +467,7 @@ function getAuthorShareCode(url) {
       try {
         if (err) {
         } else {
-          $.authorCode = []
+          $.authorCode = JSON.parse(data)
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -475,7 +477,7 @@ function getAuthorShareCode(url) {
     })
   })
 }
-function getAuthorShareCode2(url) {
+function getAuthorShareCode2(url = "") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
@@ -484,7 +486,7 @@ function getAuthorShareCode2(url) {
       try {
         if (err) {
         } else {
-          $.authorCode2 = []
+          $.authorCode2 = JSON.parse(data)
           if ($.authorCode2 && $.authorCode2.length) {
             $.authorCode.push(...$.authorCode2);
           }
