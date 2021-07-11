@@ -153,3 +153,5 @@
 0 10 * * * node /scripts/m_europeancup.js >> /scripts/logs/m_europeancup.log 2>&1
 #粉丝互动
 1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
+#锦鲤
+0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
