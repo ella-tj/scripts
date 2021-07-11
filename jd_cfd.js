@@ -39,7 +39,7 @@ $.result = [];
 $.shareCodes = [];
 let cookiesArr = [], cookie = '', token;
 
-const randomCount = $.isNode() ? 3 : 3;
+const randomCount = $.isNode() ? 0 : 3;
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -58,9 +58,9 @@ $.appId = 10009;
   }
   $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
   await requestAlgo();
-  let res = {}, res2 = await getAuthorShareCode("https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/cfd.json")
-  if (new Date().getHours() <= 3) res = {};
-  if (!res2) res2 = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/cfd.json')
+  let res = {}, res2 = []
+  if (new Date().getHours() <= 3) res = [];
+  if (!res2) res2 = []
   $.strMyShareIds = [...(res && res.shareId || []),...(res2 && res2.shareId || [])]
   $.strGroupIds = [...(res && res.strGroupIds || []),...(res2 && res2.strGroupIds || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -1153,13 +1153,13 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://share.turinglabs.net/api/v3/jxcfd/query/${randomCount}/`,
+      url: `/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
+       // console.log(`${JSON.stringify(err)}`)
+       // console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
             console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
@@ -1186,7 +1186,7 @@ function shareCodesFormat() {
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       // const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
-      $.newShareCodes = [...$.strMyShareIds, "F45CB4F07997DFE748E5656521A9034446A1568F6950206B0D44A5664662275D"];
+      $.newShareCodes = [...$.strMyShareIds, ""];
     }
     const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
