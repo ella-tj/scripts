@@ -128,6 +128,10 @@
 45 4 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
+# 燃动夏季
+12 0,6-23/2 * * * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
+# 燃动夏季助力
+14/41 7-14 * * * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
 # mod脚本执行区
 # 京喜单独开团
 2-52/25 0-1 * * * node /scripts/m_jxkt.js >> /scripts/logs/m_jxkt.log 2>&1
