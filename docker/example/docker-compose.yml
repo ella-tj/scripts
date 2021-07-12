@@ -14,8 +14,6 @@ jd_scripts:
     - 6789:6789
   volumes:
     - ./logs:/scripts/logs
-    #挂载二维码图片不可重命名
-    - ./acpush.jpg:/scripts/QRcookie/public/acpush.jpg
   tty: true
   # 因为更换仓库地址可能git pull的dns解析不到，可以在配置追加hosts
   extra_hosts:
