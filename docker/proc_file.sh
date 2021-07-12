@@ -42,3 +42,12 @@ else
       echo "已配置不启用前端扫码，仅杀掉"
    fi
 fi
+
+echo "处理返回图片（未启用扫码请忽视）。。。"
+if [ -f "/scripts/logs/acpush.jpg" ];then
+      echo "图片文件存在，开始复制文件"
+      cp -r /scripts/logs/acpush.jpg /scripts/QRcookie/public
+      echo "处理返回图片完成"
+else
+      echo "图片文件不存在，默认跑路"
+fi
