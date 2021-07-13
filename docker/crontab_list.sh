@@ -152,7 +152,7 @@
 #挖现金
 #0 0 * * * node /scripts/m_wxj.js >> /scripts/logs/m_wxj.log 2>&1
 #领现金助力
-0 0 * * * python3 /scripts/m_cashHelp.py >> /scripts/logs/m_cashHelp.log 2>&1
+#0 0 * * * python3 /scripts/m_cashHelp.py >> /scripts/logs/m_cashHelp.log 2>&1
 #狂欢欧洲杯
 0 10 * * * node /scripts/m_europeancup.js >> /scripts/logs/m_europeancup.log 2>&1
 #粉丝互动
