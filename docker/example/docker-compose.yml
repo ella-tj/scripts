@@ -77,6 +77,8 @@ jd_scripts:
     - qjd_zlzh=['']
     #领现金助力
     - cash_zlzh=['']
+    #锦鲤
+    - kois=
     
     #取关店铺和商品
     - UN_SUBSCRIBES=0&100
