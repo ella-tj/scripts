@@ -32,6 +32,3 @@
 * [@uniqueque](https://github.com/uniqueque)
 
 * [@nzw9314](https://github.com/nzw9314)
-
-docker pull sanbing666/scripts  
-[docker-compose.yml](https://github.com/sanbing666/scripts/blob/main/docker/example/docker-compose.yml)  
