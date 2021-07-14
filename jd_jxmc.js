@@ -2,7 +2,7 @@
  * 京喜牧场
  * 买、喂、收蛋、锄草、挑逗
  * export HELP_HW=true     // 默认帮助HelloWorld
- * export HELP_POOL=true   // 默认帮助助力池
+ * export HELP_POOL=false   // 默认不帮助助力池
  */
 
 import {format} from 'date-fns';
