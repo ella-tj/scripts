@@ -41,8 +41,7 @@ if ($.isNode()) {
 }
 
 $.appid = 'o2_act';
-const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "JD4iPhone/9.3.5 CFNetwork/1209 Darwin/20.2.0") : ($.getdata('JDUA') ? $.getdata('JDUA') : "JD4iPhone/9.3.5 CFNetwork/1209 Darwin/20.2.0")
-
+const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : "jdapp;iPhone;10.0.8;15.0;239fef5700934564335c2519c4a5b764e8fca656;network/wifi;model/iPhone10,3;addressid/827662943;appBuild/167740;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1") : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;10.0.8;15.0;239fef5700934564335c2519c4a5b764e8fca656;network/wifi;model/iPhone10,3;addressid/827662943;appBuild/167740;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
 
 !(async () => {
   if (!cookiesArr[0]) {
@@ -54,7 +53,7 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
       '本脚本只助力SH\n' +
       '百元守卫战 开启时间早上8点过后\n' +
       '活动时间：2021-07-08至2021-08-08\n' +
-      '脚本更新时间：2021年7月10日 12点00分\n'
+      '脚本更新时间：2021年7月12日 09点00分\n'
       );
       if(Number(summer_movement_ShHelpFlag) === 1){
         console.log('您设置了 【百元守卫战SH】✅ || 互助✅')
@@ -82,8 +81,15 @@ const UA = $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT :
   }
   // 助力
   let res = [], res2 = [];
-  $.innerShInviteList = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/smiek2221/updateTeam@master/shareCodes/summer_movement_one.json');
-  res2 = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/smiek2221/updateTeam@master/shareCodes/summer_movement.json');
+  $.innerShInviteList = await getAuthorShareCode('https://raw.githubusercontent.com/smiek2221/updateTeam/master/shareCodes/summer_movement_one.json');
+  res2 = await getAuthorShareCode('https://raw.githubusercontent.com/smiek2221/updateTeam/master/shareCodes/summer_movement.json');
+  if(!$.innerShInviteList[0]){
+    $.innerShInviteList = await getAuthorShareCode('https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/updateTeam/master/shareCodes/summer_movement.json');
+  }
+  if(!res2[0]){
+    res2 = await getAuthorShareCode('https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/updateTeam/master/shareCodes/summer_movement.json');
+  }
+  $.ShInviteLists = []
   $.ShInviteLists = []
   if (ShHelpAuthorFlag) {
     $.innerShInviteLists = getRandomArrayElements([...res, ...res2], [...res, ...res2].length);
@@ -137,6 +143,7 @@ async function movement() {
     $.taskList = [];
     $.shopSign = ``;
     $.userInfo = ''
+    $.hundred = false
     if (new Date().getUTCHours() + 8 >= 8) {
       console.log('\n百元守卫战')
       if(Number(summer_movement_ShHelpFlag) === 1 || Number(summer_movement_ShHelpFlag) === 2){
@@ -150,7 +157,7 @@ async function movement() {
         }
       }
     }else{
-      console.log('\n百元守卫战开启时间还没到')
+      console.log('\n未开启百元守卫战')
     }
     
   } catch (e) {
@@ -162,6 +169,10 @@ async function takePostRequest(type) {
   let body = ``;
   let myRequest = ``;
   switch (type) {
+    case 'olympicgames_home':
+      body = `functionId=olympicgames_home&body={}&client=wh5&clientVersion=1.0.0&appid=${$.appid}`;
+      myRequest = await getPostRequest(`olympicgames_home`, body);
+      break;
     case 'olympicgames_receiveCash':
       let id = 6
       if ($.Shend) id = 4
@@ -205,6 +216,18 @@ async function dealReturn(type, res) {
     return;
   }
   switch (type) {
+    case 'olympicgames_home':
+    if (data.code === 0 && data.data && data.data.result) {
+        if (data.data['bizCode'] === 0) {
+          $.homeData = data.data;
+          $.secretpInfo[$.UserName] = true
+        }
+      } else if (data.data && data.data.bizMsg) {
+        console.log(data.data.bizMsg);
+      } else {
+        console.log(res);
+      }
+      break;
     case 'olympicgames_receiveCash':
       if (data.code === 0 && data.data && data.data.result) {
         if (data.data.result.couponVO) {
@@ -227,7 +250,7 @@ async function dealReturn(type, res) {
         console.log(`SH互助码：${data.data.result && data.data.result.inviteId || '助力已满，获取助力码失败\n'}`);
         if (data.data.result && data.data.result.inviteId) {
           let look = data.data.result
-          look.assistanceVOList = look.assistanceVOList.length
+          look.assistanceVOList = (look.assistanceVOList && look.assistanceVOList.length) || 0
           console.log(JSON.stringify(look))
           if (look.inviteId) $.ShInviteList.push(look.inviteId);
           console.log(`守护金额：${Number(look.activityLeftAmount || 0)} 助力次数：${look.assistanceVOList} 护盾剩余：${timeFn(Number(look.guardLeftSeconds || 0) * 1000)} 离结束剩：${timeFn(Number(look.activityLeftSeconds || 0) * 1000)}`)
@@ -288,7 +311,7 @@ async function getPostRequest(type, body) {
     'Cookie': $.cookie,
     "Origin": "https://wbbny.m.jd.com",
     "Referer": "https://wbbny.m.jd.com/",
-    "User-Agent": "jdapp;iPhone;9.2.0;14.1;",
+    "User-Agent": UA,
 
   };
   return {url: url, method: method, headers: headers, body: body};
