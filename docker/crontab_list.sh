@@ -8,21 +8,14 @@
 45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 
 #整点红包雨
-1 0-23/1 * * * node /scripts/long_super_redrain.js >> /scripts/logs/long_super_redrain.log 2>&1
+#1 0-23/1 * * * node /scripts/long_super_redrain.js >> /scripts/logs/long_super_redrain.log 2>&1
 #半点红包雨
-30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
-
-#每日抽奖(活动时间：2021-05-01至2021-05-31)
-#13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
+#30 16-23/1 * * * node /scripts/long_half_redrain.js >> /scripts/logs/long_half_redrain.log 2>&1
 
 #金榜创造营 活动时间：2021-05-21至2021-12-31
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 #5G超级盲盒(活动时间：2021-06-2到2021-07-31)
 0 3,6,8 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
-#明星小店(星店长，2021-06-10)
-#0 1,21 * * * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
-#京喜领88元红包(6.31到期)
-#30 1,6,12,21 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #女装盲盒7.1-7.30
 35 1,23 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 #点点券
@@ -145,17 +138,13 @@
 # 京东到家
 */5 * * * * node /scripts/jddj_getPoints.js >> /scripts/logs/jddj_getPoints.log 2>&1
 */5 * * * * node /scripts/jddj_fruit_collectWater.js >> /scripts/logs/jddj_fruit_collectWater.log 2>&1
-10 0 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
+10 8 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
 # 京享值PK
 15 6,13,21 * * * node /scripts/m_pk.js >> /scripts/logs/m_pk.log 2>&1
-#挖现金
-#0 0 * * * node /scripts/m_wxj.js >> /scripts/logs/m_wxj.log 2>&1
 #领现金助力
 0 0 * * * python3 /scripts/m_cashHelp.py >> /scripts/logs/m_cashHelp.log 2>&1
-#狂欢欧洲杯
-#0 10 * * * node /scripts/m_europeancup.js >> /scripts/logs/m_europeancup.log 2>&1
 #粉丝互动
 1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #锦鲤
