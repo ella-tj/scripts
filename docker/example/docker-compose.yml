@@ -37,10 +37,12 @@ jd_scripts:
     - JX_USER_AGENT=
     #不执行的脚本
     - DO_NOT_RUN_SCRIPTS=
-    #paolu即运行前端扫码默认不运行
+    #前端扫码默认不运行
     - QRcookie_ENABLE=
     #前端扫码企业微信通知
     - QR_QYWX_AM=
+    #财富岛热气球挂机
+    - CFD_LOOP_ENABLE=
     #试用不执行的账号
     - DONOT_TRY_ACCOUNT=
     #单容器多账号自动互助
