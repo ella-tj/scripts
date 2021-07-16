@@ -101,7 +101,7 @@
 #京东极速版签到+赚现金任务
 21 1,6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 #京喜财富岛
-5 * * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
+5 * * * * ts-node /scripts/jd_cfd.ts >> /scripts/logs/jd_cfd.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #家庭号
@@ -129,9 +129,9 @@
 # 省钱大赢家翻翻乐
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 燃动夏季
-12 0,6-23/2 * * * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
+#12 0,6-23/2 * * * node /scripts/jd_summer_movement.js >> /scripts/logs/jd_summer_movement.log 2>&1
 # 燃动夏季助力
-14/41 7-14 * * * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
+#14/41 7-14 * * * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
 # mod脚本执行区
 # 京喜单独开团
 2-52/25 0-1 * * * node /scripts/m_jxkt.js >> /scripts/logs/m_jxkt.log 2>&1
@@ -140,7 +140,7 @@
 # 试用
 30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
 # 抢京豆
-1 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
+#1 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
 # 京东到家
 */5 * * * * node /scripts/jddj_getPoints.js >> /scripts/logs/jddj_getPoints.log 2>&1
 */5 * * * * node /scripts/jddj_fruit_collectWater.js >> /scripts/logs/jddj_fruit_collectWater.log 2>&1
