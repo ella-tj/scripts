@@ -36,8 +36,9 @@
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
 15 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
-# 宠汪汪邀请助力
-10 13-20/1 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
+# 宠汪汪
+10 13-20/2 * * * node /scripts/jd_joy_new.js >> /scripts/logs/jd_joy_new.log 2>&1
+50 18,20 * * * ts-node /scripts/jd_joy_park.ts >> /scripts/logs/jd_joy_park.log 2>&1
 # 摇钱树
 23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
@@ -119,7 +120,7 @@
 # 跳跳乐瓜分京豆
 #15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜牧场
-15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
+15 0,12,22 * * * ts-node /scripts/jd_jxmc.ts >> /scripts/logs/jd_jxmc.log 2>&1
 # 送豆得豆
 45 4 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 早起福利
