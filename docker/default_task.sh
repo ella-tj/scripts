@@ -248,6 +248,6 @@ echo "第11步将仓库的docker_entrypoint.sh脚本更新至系统/usr/local/bi
 cat /scripts/docker/docker_entrypoint.sh >/usr/local/bin/docker_entrypoint.sh
 
 echo "发送通知"
-export NOTIFY_CONTENT="镜像更新，重新拉取。"
+export NOTIFY_CONTENT="镜像更新，删除原镜像重新拉取。"
 cd /scripts/docker
 node notify_docker_user.js
