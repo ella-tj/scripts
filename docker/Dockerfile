@@ -24,6 +24,7 @@ RUN set -ex \
     && ssh-keyscan github.com > /root/.ssh/known_hosts \
     && git clone -b $REPO_BRANCH $REPO_URL /scripts \
     && cd /scripts \
+    && npm i -g @types/node tslib typescript ts-node \
     && mkdir logs \
     && npm install \
     && cp /scripts/docker/docker_entrypoint.sh /usr/local/bin \
