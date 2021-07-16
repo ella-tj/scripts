@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/SStarbuckS/Scripts_back.git"
+    "type": [
+        "git"
+        ],
+    "url": "https://github.com/sanbing666/scripts.git"
   },
   "keywords": [
     "京东薅羊毛工具, 京东水果、宠物、种豆等等"
@@ -28,6 +30,10 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "date-fns":"^2.22.1",
+    "axios":"^0.21.1",
+    "ts-md5":"^1.2.9",
+    "dotenv":"^10.0.0"
   }
 }
