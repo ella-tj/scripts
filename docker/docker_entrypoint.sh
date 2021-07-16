@@ -17,10 +17,10 @@ else
   echo "git pull拉取最新代码..."
   git -C /scripts pull --rebase
   echo "npm install 安装最新依赖"
+  npm i -g @types/node tslib typescript ts-node
   npm install --prefix /scripts
   echo "复制依赖文件夹到前端扫码"
   cp -r /scripts/node_modules /scripts/QRcookie
-  npm audit fix
 fi
 ) || exit 0
 
