@@ -150,3 +150,5 @@
 1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #锦鲤
 0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
+#东东超市商品兑换
+59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.py 2>&1
