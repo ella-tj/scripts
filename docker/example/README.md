@@ -5,6 +5,7 @@
 东东超市并发执行`blueCoin_Cc`默认`True`开启，`False`关闭  
 京东试用是否运行`JD_TRY`默认不运行，值`true`运行  
 京东试用不执行的账号`DONOT_TRY_ACCOUNT`，值为账号排序，例`1&6`，账号1与账号3跳过执行  
+早起赢现金变量`morningScPins`
 
 - 2021.7.16  
 财富岛热气球挂机`CFD_LOOP_ENABLE`，默认挂机，当值为`Y`任意其它值则不挂机  
