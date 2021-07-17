@@ -36,16 +36,6 @@ jd_scripts:
     #京东appUA&京喜
     - JD_USER_AGENT=
     - JX_USER_AGENT=
-    #不执行的脚本
-    - DO_NOT_RUN_SCRIPTS=
-    #前端扫码默认不运行
-    - QRcookie_ENABLE=
-    #前端扫码企业微信通知
-    - QR_QYWX_AM=
-    #财富岛热气球挂机
-    - CFD_LOOP_ENABLE=
-    #试用不执行的账号
-    - DONOT_TRY_ACCOUNT=
     #微信server酱通知
     - PUSH_KEY=
     #Bark App通知
@@ -74,9 +64,19 @@ jd_scripts:
     - UN_SUBSCRIBES=0&100
     
     #####脚本变量区#####
-    #东东超市商品兑换
+    #前端扫码默认不运行
+    - QRcookie_ENABLE=
+    #前端扫码企业微信通知
+    - QR_QYWX_AM=
+    #东东超市商品兑换与并发执行
     - coinToBeans = '京豆包'
     - blueCoin_Cc = True
+    #不执行的脚本
+    - DO_NOT_RUN_SCRIPTS=
+    #财富岛热气球挂机
+    - CFD_LOOP_ENABLE=
+    #试用不执行的账号
+    - DONOT_TRY_ACCOUNT=
     
 
     #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
