@@ -75,7 +75,9 @@ jd_scripts:
     - DO_NOT_RUN_SCRIPTS=
     #财富岛热气球挂机
     - CFD_LOOP_ENABLE=
-    #试用不执行的账号
+    #京东试用是否运行
+    - JD_TRY=
+    #京东试用不执行的账号
     - DONOT_TRY_ACCOUNT=
     
 
