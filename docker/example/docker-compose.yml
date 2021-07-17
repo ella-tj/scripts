@@ -79,6 +79,8 @@ jd_scripts:
     - JD_TRY=
     #京东试用不执行的账号
     - DONOT_TRY_ACCOUNT=
+    #早起赢现金
+    - morningScPins=
     
 
     #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
