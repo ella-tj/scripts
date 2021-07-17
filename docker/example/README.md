@@ -1,7 +1,11 @@
 ### update tips  
 
+- 2021.7.17  
+东东超市商品兑换`coinToBeans`默认京豆包，值为商品关键词  
+东东超市并发执行`blueCoin_Cc`默认`True`开启，`False`关闭  
+
 - 2021.7.16  
-财富岛热气球挂机`CFD_LOOP_ENABLE`，值为Y即挂机，默认挂机  
+财富岛热气球挂机`CFD_LOOP_ENABLE`，默认挂机，当值为`Y`任意其它值则不挂机  
 
 - 2021.7.13  
 锦鲤变量`kois`值为账号pin多个账号@连接    
