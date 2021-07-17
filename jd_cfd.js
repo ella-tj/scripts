@@ -57,13 +57,13 @@ $.appId = 10028;
   }
   $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
   await requestAlgo();
-  await $.wait(1000)
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/cfd.json')
-  if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
-  }
+//  await $.wait(1000)
+//  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/cfd.json')
+//  if (!res) {
+//    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+//    await $.wait(1000)
+//    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
+//  }
   $.strMyShareIds = [...(res && res.shareId || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -657,7 +657,7 @@ function rewardSign(body) {
       }
     })
   })
-}
+}         
 function helpdraw(dwUserId) {
   return new Promise((resolve) => {
     $.get(taskUrl(`story/helpdraw`, `dwUserId=${dwUserId}`), (err, resp, data) => {
@@ -669,7 +669,7 @@ function helpdraw(dwUserId) {
           data = JSON.parse(data);
           if (data.iRet === 0 || data.sErrMsg === "success") {
             if (data.Data.StagePrizeInfo) {
-              console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币 ${data.Data.StagePrizeInfo.ddwMoney}财富 ${data.Data.StagePrizeInfo.strPrizeName && !data.Data.StagePrizeInfo.ddwMoney || `0元`}红包`)
+              console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币 ${data.Data.StagePrizeInfo.ddwMoney}财富 ${(data.Data.StagePrizeInfo.strPrizeName && !data.Data.StagePrizeInfo.ddwMoney) ? data.Data.StagePrizeInfo.strPrizeName : `0元`}红包`)
             } else {
               console.log(`领取助力奖励成功：获得${data.Data.ddwCoin}金币`)
             }
@@ -1073,16 +1073,16 @@ function helpByStage(shareCodes) {
           if (data.iRet === 0 || data.sErrMsg === 'success') {
             console.log(`助力成功：获得${data.Data.GuestPrizeInfo.strPrizeName}`)
           } else if (data.iRet === 2232 || data.sErrMsg === '今日助力次数达到上限，明天再来帮忙吧~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
             $.canHelp = false
           } else if (data.iRet === 9999 || data.sErrMsg === '您还没有登录，请先登录哦~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
             $.canHelp = false
           } else if (data.iRet === 2229 || data.sErrMsg === '助力失败啦~') {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：您的账号或者被助力的账号可能已黑，请联系客服`)
             // $.canHelp = false
           } else {
-            console.log(data.sErrMsg)
+            console.log(`助力失败：${data.sErrMsg}`)
           }
         }
       } catch (e) {
