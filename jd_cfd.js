@@ -64,7 +64,7 @@ $.appId = 10028;
 //    await $.wait(1000)
 //    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
 //  }
-  $.strMyShareIds = [...(res && res.shareId || [])]
+//  $.strMyShareIds = [...(res && res.shareId || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
