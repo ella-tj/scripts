@@ -18,7 +18,7 @@
 # 特物Z|万物皆可国创
 30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #发财大赢家
-1 0 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
+1 1 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
 #发财大赢家翻翻乐
 1 6-21/1 * * * node /scripts/jd_618redpacket.js >> /scripts/logs/jd_618redpacket.log 2>&1
 
@@ -38,7 +38,7 @@
 # 京东全民开红包
 12 0-23/4 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
-6 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
+12 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 东东超市
 31 0,1-23/2 * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
 # 取关京东店铺商品
@@ -60,23 +60,21 @@
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
 # 赚京豆(微信小程序)
-12 2,3,4,5 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
+12 1,2,3 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 京东快递签到
-47 1 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
+30 5 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 京东汽车(签到满500赛点可兑换500京豆)
-0 0 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
+0 5 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
 23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 微信小程序京东赚赚
-6 0-5/1,11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
-# 京东汽车旅程赛点兑换金豆
-0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+6 2-6/2,11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 导到所有互助码
 23 7 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
 # 口袋书店
 38 8,12,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 签到领现金
-10 */4 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
+10 5,6,7 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 闪购盲盒
 47 8,22 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 # 京东秒秒币
@@ -96,9 +94,7 @@
 # 幸运大转盘
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 领金贴
-5 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
-# 跳跳乐瓜分京豆
-#15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+5 6 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 送豆得豆
 45 4 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 早起福利
@@ -118,7 +114,7 @@
 # 东东农场
 15 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 宠汪汪
-15 0-23/2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
+15 1-23/2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 宠汪汪拿好友积分与狗粮
 10 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 
@@ -126,9 +122,9 @@
 # 京喜签到
 5 3 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 京喜财富岛
-5 * * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
+5 1-23/1 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
 # 京喜工厂
-50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
+50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜农场
 30 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 京喜牧场
@@ -147,11 +143,15 @@
 10 8 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
-#领现金助力
-0 0 * * * python3 /scripts/m_cashHelp.py >> /scripts/logs/m_cashHelp.log 2>&1
+#愤怒的现金
+0 0 * * * node /scripts/m_angryCash.js >> /scripts/logs/m_angryCash.log 2>&1
+#愤怒的锦鲤
+0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
+#赚30元
+0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/jd_earn30.log 2>&1
+#发财大赢家助力
+0 0 * * * node /scripts/m_dyj_help.js >> /scripts/logs/m_dyj_help.log 2>&1
 #粉丝互动
 1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
-#锦鲤
-0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
 #东东超市商品兑换
 59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
