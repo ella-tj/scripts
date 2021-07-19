@@ -1,5 +1,10 @@
 ### update tips  
 
+- 2021.7.19  
+愤怒的现金变量`cashHelpPins`值为账号pin多个账号@连接，默认向前助力9个账号  
+赚30元变量`earn30Pins`值为需要签到和接受助力的账号，默认所有账号  
+发财大赢家助力变量`dyjHelpPins`值为账号pin多个账号@连接  
+
 - 2021.7.17  
 东东超市商品兑换`coinToBeans`默认京豆包，值为商品关键词  
 东东超市并发执行`blueCoin_Cc`默认`True`开启，`False`关闭  
