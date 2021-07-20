@@ -85,6 +85,8 @@ jd_scripts:
     - earn30Pins=
     #发财大赢家助力
     - dyjHelpPins=
+    #京喜单独开团
+    - jxgc_kaituan=
     
 
     #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
