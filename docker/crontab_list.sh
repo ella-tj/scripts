@@ -123,6 +123,8 @@
 5 3 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 京喜财富岛
 5 1-23/1 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
+# 京喜财富岛提现
+59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜农场
@@ -132,7 +134,7 @@
 
 ##############mod脚本任务区##############
 # 京喜单独开团
-2-52/25 0-1 * * * node /scripts/m_jxkt.js >> /scripts/logs/m_jxkt.log 2>&1
+0 0 * * * python3 /scripts/m_jxgc_tuan.py >> /scripts/logs/m_jxgc_tuan.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 试用
@@ -148,7 +150,7 @@
 #愤怒的锦鲤
 0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
 #赚30元
-0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/jd_earn30.log 2>&1
+0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
 #发财大赢家助力
 0 0 * * * node /scripts/m_dyj_help.js >> /scripts/logs/m_dyj_help.log 2>&1
 #粉丝互动
