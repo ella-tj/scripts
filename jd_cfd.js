@@ -968,7 +968,6 @@ async function getBuildInfo(body, buildList, type = true) {
               default:
                 break
             }
-            // console.log(data)
             if (data.dwBuildLvl === 0) {
               console.log(`创建建筑`)
               console.log(`【${buildNmae}】当前建筑还未创建，开始创建`)
@@ -985,16 +984,15 @@ async function getBuildInfo(body, buildList, type = true) {
             await getUserInfo(false)
             console.log(`升级建筑`)
             console.log(`【${buildNmae}】当前等级：${buildList.dwLvl} 升级获得财富：${data.ddwLvlRich}`)
-            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，当前拥有${$.info.ddwCoinBalance}`)
-            if(data.dwCanLvlUp > 0 && $.info.ddwCoinBalance >= data.ddwNextLvlCostCoin) {
+            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，当前拥有${$.info.ddwCoinBalance}，保留三倍升级所需金币${data.ddwNextLvlCostCoin * 3}`)
+            if(data.dwCanLvlUp > 0 && $.info.ddwCoinBalance >= data.ddwNextLvlCostCoin * 3) {
               console.log(`【${buildNmae}】满足升级条件，开始升级`)
               const body = `ddwCostCoin=${data.ddwNextLvlCostCoin}&strBuildIndex=${data.strBuildIndex}`
               let buildLvlUpRes = await buildLvlUp(body)
               if (buildLvlUpRes.iRet === 0) {
                 console.log(`【${buildNmae}】升级成功\n`)
               } else {
-                console.log(`${buildLvlUpRes}\n`)
-                await $.wait(2000)
+                console.log(`【${buildNmae}】升级失败：${buildLvlUpRes.sErrMsg}\n`)
               }
             } else {
               console.log(`【${buildNmae}】不满足升级条件，跳过升级\n`)
