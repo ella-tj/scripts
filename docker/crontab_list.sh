@@ -157,3 +157,9 @@
 1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #东东超市商品兑换
 59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
+# 抢京豆
+2 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
+# 升级赚京豆
+21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
+# 全民摸冰
+6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
