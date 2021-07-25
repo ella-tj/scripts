@@ -24,11 +24,11 @@ let notifyMsg = ''
 // default params
 const args = {
     // 是否通知
-    jdNotify: true,
+    jdNotify: false,
     // 每次获取商品数量
     pageSize: 12,
     // 试用商铺类型
-    cidsList: ["更多惊喜"],
+    cidsList: ["家用电器", "手机数码", "电脑办公", "家居家装"],
     // 试用类型
     typeList: ["普通试用", "闪电试用"],
     // 商品过滤关键字
@@ -136,8 +136,8 @@ function requireConfig() {
                 }
             })
             if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
-	if (process.env.DONOT_TRY_ACCOUNT) process.env.DONOT_TRY_ACCOUNT.split('&').map((item, index) => Number(item) === 0 ? $.cookiesArr = [] : $.cookiesArr.splice(Number(item) - 1 - index, 1))
-	} else {
+	    if (process.env.DONOT_TRY_ACCOUNT) process.env.DONOT_TRY_ACCOUNT.split('&').map((item, index) => Number(item) === 0 ? $.cookiesArr = [] : $.cookiesArr.splice(Number(item) - 1 - index, 1))
+        } else {
             //IOS等用户直接用NobyDa的jd $.cookie
             $.cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
         }
@@ -226,6 +226,7 @@ async function getGoodList() {
             console.log(`⏰ 获取 ${cidsKey} ${typeKey} 商品列表`)
             $.totalPages = 1
             for (let page = 1; page <= $.totalPages; page++) {
+                await $.wait(100)
                 await getGoodListByCond(cidsMap[cidsKey], page, args.pageSize, typeMap[typeKey], '0')
             }
         }
