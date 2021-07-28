@@ -96,7 +96,7 @@ async function step1() {
         `&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
       'User-Agent':
-        'jdapp;iPhone;10.0.8;13.5;e1b0d1280497ac860077212936146d3164d02cc4;network/4g;ADID/4098B1C6-E0D9-47EE-937F-2030243CC386;model/iPhone11,8;addressid/3583295486;appBuild/167741;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+        'jdapp;android;10.0.2;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36',
       Host: 'plogin.m.jd.com',
     },
   });
@@ -139,7 +139,7 @@ async function step2(cookiesObj) {
         `&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
       'User-Agent':
-        'jdapp;iPhone;10.0.8;13.5;e1b0d1280497ac860077212936146d3164d02cc4;network/4g;ADID/4098B1C6-E0D9-47EE-937F-2030243CC386;model/iPhone11,8;addressid/3583295486;appBuild/167741;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+        'jdapp;android;10.0.2;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36',
       Host: 'plogin.m.jd.com',
     },
   });
@@ -180,7 +180,7 @@ async function checkLogin(user) {
       'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
       Accept: 'application/json, text/plain, */*',
       'User-Agent':
-        'jdapp;iPhone;10.0.8;13.5;e1b0d1280497ac860077212936146d3164d02cc4;network/4g;ADID/4098B1C6-E0D9-47EE-937F-2030243CC386;model/iPhone11,8;addressid/3583295486;appBuild/167741;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1',
+        'jdapp;android;10.0.2;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36',
     },
   });
   return response;
