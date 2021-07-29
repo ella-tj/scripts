@@ -89,6 +89,8 @@ jd_scripts:
     - jxgc_kaituan=
     #抢京豆
     - qjd_zlzh=[]
+    #宠汪汪号内互助
+    - JOY_RUN_HELP_MYSELF=true
     
 
     #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
