@@ -144,7 +144,7 @@
 
 ##############mod脚本任务区##############
 # 京喜单独开团
-0 0 * * * python3 /scripts/m_jxgc_tuan.py >> /scripts/logs/m_jxgc_tuan.log 2>&1
+15 0 * * * python3 /scripts/m_jxgc_tuan.py >> /scripts/logs/m_jxgc_tuan.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 试用
@@ -168,7 +168,7 @@
 #东东超市商品兑换
 59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
 # 抢京豆
-2 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
+#2 0 * * * python3 /scripts/m_qjd.py >> /scripts/logs/m_qjd.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
