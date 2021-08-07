@@ -137,6 +137,8 @@
 59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
+# 京喜工厂开团
+*/10 0 * * * node /scripts/jd_jxkt.js >> /scripts/logs/jd_jxkt.log 2>&1
 # 京喜农场
 30 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 京喜牧场
@@ -145,8 +147,6 @@
 4 2,10 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
 ##############mod脚本任务区##############
-# 京喜单独开团
-15 0 * * * python3 /scripts/m_jxgc_tuan.py >> /scripts/logs/m_jxgc_tuan.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 试用
