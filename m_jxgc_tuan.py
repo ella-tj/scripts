@@ -208,18 +208,18 @@ getCk.getCookie()
 
 # 获取v4环境 特殊处理
 if os.path.exists(v4f):
-    try:
-        with open(v4f, 'r', encoding='utf-8') as f:
-            curenv = locals()
-            for i in f.readlines():
-                r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#!&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
-                r = r.findall(i)
-                if len(r) > 0:
-                    for i in r:
-                        if i[0] != 'JD_COOKIE':
-                            curenv[i[0]] = getEnvs(i[1])
-    except:
-        pass
+try:
+    with open(v4f, 'r', encoding='utf-8') as f:
+        curenv = locals()
+        for i in f.readlines():
+            r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
+            r = r.findall(i)
+            if len(r) > 0:
+                for i in r:
+                    if i[0] != 'JD_COOKIE':
+                        curenv[i[0]] = getEnvs(i[1])
+except:
+    pass
 
 if "jxgc_kaituan" in os.environ:
     if len(os.environ["jxgc_kaituan"]) > 1:
