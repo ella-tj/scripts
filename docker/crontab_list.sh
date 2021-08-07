@@ -164,7 +164,7 @@
 #发财大赢家助力
 0 0 * * * node /scripts/m_dyj_help.js >> /scripts/logs/m_dyj_help.log 2>&1
 #粉丝互动
-1 8 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
+34 6,18 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #东东超市商品兑换
 59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
 # 抢京豆
@@ -173,3 +173,5 @@
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
+#七夕情报局
+36 0,10,21 4-15 8 * node /scripts/m_qixi.js >> /scripts/logs/m_qixi.log 2>&1
