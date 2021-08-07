@@ -3,12 +3,13 @@
 - 2021.8.8  
 签到领现金兑换变量`exchangeAccounts`值为"pt_pin1@2&pt_pin2@10"，账号+金额，默认为所有账号兑换10红包  
 抢京豆变量`angryBeanPins`值为账号pin多个账号@连接  
+京喜工厂单独开团`OPEN_DREAMFACTORY_TUAN`值为账号顺序"1,2,3"  
 
 - 2021.7.22  
 (已删除)抢京豆变量`qjd_zlzh`值为['pin', '或者', '用户名']  
 
 - 2021.7.20  
-京喜单独开团变量`jxgc_kaituan`值为设置开团的账号可填用户名 或 pin  
+(已删除)京喜单独开团变量`jxgc_kaituan`值为设置开团的账号可填用户名 或 pin  
 
 - 2021.7.19  
 愤怒的现金变量`cashHelpPins`值为账号pin多个账号@连接，默认向前助力9个账号  
