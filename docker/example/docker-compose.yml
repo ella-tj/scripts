@@ -81,6 +81,8 @@ jd_scripts:
     - kois=
     #愤怒的现金
     - cashHelpPins=
+    #签到领现金兑换
+    - exchangeAccounts=""
     #赚30元
     - earn30Pins=
     #发财大赢家助力
