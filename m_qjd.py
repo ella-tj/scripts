@@ -273,7 +273,7 @@ if os.path.exists(v4f):
         with open(v4f, 'r', encoding='utf-8') as f:
             curenv = locals()
             for i in f.readlines():
-                r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#!&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
+                r = re.compile(r'^export\s .*?)=[\'\"]?([\w\.\-@#!&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
                 r = r.findall(i)
                 if len(r) > 0:
                     for i in r:
