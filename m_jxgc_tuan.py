@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
-#京喜工厂开团
 '''
 项目名称: JD-Script / jd_jxgc_tuan
 Author: Curtin
@@ -9,7 +8,9 @@ cron: 10 0,7 * * *
 Date: 2021/7/17 下午9:40
 TG交流 https://t.me/topstyle996
 TG频道 https://t.me/TopStyle2021
-update 2021.7.24 14:30
+update 2021.8.8 12:30
+建议cron: 0 0,7,10 * * *  python3 jd_jxgc_tuan.py
+new Env('京喜工厂开团');
 '''
 #ck 优先读取【JDCookies.txt】 文件内的ck  再到 ENV的 变量 JD_COOKIE='ck1&ck2' 最后才到脚本内 cookies=ck
 cookies = ''
@@ -36,7 +37,7 @@ from hashlib import sha256, sha512, md5
 import hmac
 
 appId = 10001
-activeId = 'T_zZaWP6by9yA1wehxM4mg%3D%3D'
+activeId = 'Xj2_3G-hQ4GRLCsLqIxFeQ%3D%3D'
 
 countElectric = {}
 def userAgent():
@@ -208,18 +209,18 @@ getCk.getCookie()
 
 # 获取v4环境 特殊处理
 if os.path.exists(v4f):
-try:
-    with open(v4f, 'r', encoding='utf-8') as f:
-        curenv = locals()
-        for i in f.readlines():
-            r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
-            r = r.findall(i)
-            if len(r) > 0:
-                for i in r:
-                    if i[0] != 'JD_COOKIE':
-                        curenv[i[0]] = getEnvs(i[1])
-except:
-    pass
+    try:
+        with open(v4f, 'r', encoding='utf-8') as f:
+            curenv = locals()
+            for i in f.readlines():
+                r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#!&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
+                r = r.findall(i)
+                if len(r) > 0:
+                    for i in r:
+                        if i[0] != 'JD_COOKIE':
+                            curenv[i[0]] = getEnvs(i[1])
+    except:
+        pass
 
 if "jxgc_kaituan" in os.environ:
     if len(os.environ["jxgc_kaituan"]) > 1:
@@ -242,7 +243,7 @@ def getactiveId():
         "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Mobile Safari/537.36"
     }
     result = requests.get(url, headers, timeout=30).text
-    r = re.compile(r'activeId=(T_.*?),')
+    r = re.compile(r'activeId=(Xj2_.*?),')
     r = r.findall(result)
     if len(r) > 0:
         activeId = r[0]
