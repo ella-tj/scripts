@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
+#签到领现金-助力
 '''
 项目名称: JD-Script / jd_cash
 Author: Curtin
@@ -7,7 +8,9 @@ Author: Curtin
 Date: 2021/7/4 上午09:35
 TG交流 https://t.me/topstyle996
 TG频道 https://t.me/TopStyle2021
-update 2021.7.17 15:02
+update 2021.7.24 18:02
+建议cron: 0 0 * * *  python3 jd_cashHelp.py
+new Env('签到领现金-助力');
 '''
 
 #ck 优先读取【JDCookies.txt】 文件内的ck  再到 ENV的 变量 JD_COOKIE='ck1&ck2' 最后才到脚本内 cookies=ck
@@ -141,9 +144,9 @@ class getJDCookie(object):
         except Exception as e:
             print(f"【getCookie Error】{e}")
 
-    # 检测cookie格式是否正确
+        # 检测cookie格式是否正确
     def getUserInfo(self, ck, pinName, userNum):
-        url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback=GetJDUserInfoUnion'
+        url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback='
         headers = {
             'Cookie': ck,
             'Accept': '*/*',
@@ -155,12 +158,17 @@ class getJDCookie(object):
             'Accept-Language': 'zh-cn'
         }
         try:
-            resp = requests.get(url=url, verify=False, headers=headers, timeout=60).text
-            r = re.compile(r'GetJDUserInfoUnion.*?\((.*?)\)')
-            result = r.findall(resp)
-            userInfo = json.loads(result[0])
-            nickname = userInfo['data']['userInfo']['baseInfo']['nickname']
-            return ck, nickname
+            if sys.platform == 'ios':
+                resp = requests.get(url=url, verify=False, headers=headers, timeout=60).json()
+            else:
+                resp = requests.get(url=url, headers=headers, timeout=60).json()
+            if resp['retcode'] == "0":
+                nickname = resp['data']['userInfo']['baseInfo']['nickname']
+                return ck, nickname
+            else:
+                context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
+                print(context)
+                return ck, False
         except Exception:
             context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
             print(context)
@@ -208,18 +216,19 @@ getCk = getJDCookie()
 getCk.getCookie()
 
 # 获取v4环境 特殊处理
-try:
-    with open(v4f, 'r', encoding='utf-8') as f:
-        curenv = locals()
-        for i in f.readlines():
-            r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
-            r = r.findall(i)
-            if len(r) > 0:
-                for i in r:
-                    if i[0] != 'JD_COOKIE':
-                        curenv[i[0]] = getEnvs(i[1])
-except:
-    pass
+if os.path.exists(v4f):
+    try:
+        with open(v4f, 'r', encoding='utf-8') as f:
+            curenv = locals()
+            for i in f.readlines():
+                r = re.compile(r'^export\s(.*?)=[\'\"]?([\w\.\-@#!&=_,\[\]\{\}\(\)]{1,})+[\'\"]{0,1}$', re.M | re.S | re.I)
+                r = r.findall(i)
+                if len(r) > 0:
+                    for i in r:
+                        if i[0] != 'JD_COOKIE':
+                            curenv[i[0]] = getEnvs(i[1])
+    except:
+        pass
 
 if "cash_zlzh" in os.environ:
     if len(os.environ["cash_zlzh"]) > 1:
