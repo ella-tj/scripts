@@ -26,19 +26,15 @@ cron "1 7-21/2 * * *" script-path=jd_plantBean.js,tag=京东种豆得豆
 const $ = new Env('京东种豆得豆');
 //Node.js用户请在jdCookie.js处填写京东ck;
 //ios等软件用户直接用NobyDa的jd cookie
-let jdNotify = true;//是否开启静默运行。默认true开启
+let jdNotify = false;//是否开启静默运行。默认true开启
 let cookiesArr = [], cookie = '', jdPlantBeanShareArr = [], isBox = false, notify, newShareCodes, option, message,subTitle;
 //京东接口地址
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 //助力好友分享码(最多3个,否则后面的助力失败)
 //此此内容是IOS用户下载脚本到本地使用，填写互助码的地方，同一京东账号的好友互助码请使用@符号隔开。
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
-let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
-                   //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '',
-  //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '',
-]
+//更改互助区域为空值
+let shareCodes = [''];
 let allMessage = ``;
 let currentRoundId = null;//本期活动id
 let lastRoundId = null;//上期id
@@ -95,13 +91,13 @@ async function jdPlantBean() {
       $.myPlantUuid = getParam(shareUrl, 'plantUuid')
       console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
       roundList = $.plantBeanIndexResult.data.roundList;
-      currentRoundId = roundList[1].roundId;//本期的roundId
-      lastRoundId = roundList[0].roundId;//上期的roundId
-      awardState = roundList[0].awardState;
+      currentRoundId = roundList[2].roundId;//本期的roundId
+      lastRoundId = roundList[1].roundId;//上期的roundId
+      awardState = roundList[1].awardState;
       $.taskList = $.plantBeanIndexResult.data.taskList;
       subTitle = `【京东昵称】${$.plantBeanIndexResult.data.plantUserInfo.plantNickName}`;
-      message += `【上期时间】${roundList[0].dateDesc.replace('上期 ', '')}\n`;
-      message += `【上期成长值】${roundList[0].growth}\n`;
+      message += `【上期时间】${roundList[1].dateDesc.replace('上期 ', '')}\n`;
+      message += `【上期成长值】${roundList[1].growth}\n`;
       await receiveNutrients();//定时领取营养液
       await doHelp();//助力
       await doTask();//做日常任务
@@ -113,22 +109,19 @@ async function jdPlantBean() {
       await plantShareSupportList();
     } else {
       console.log(`种豆得豆-初始失败:  ${JSON.stringify($.plantBeanIndexResult)}`);
-      console.log(`等待10秒后重试`);
-      await $.wait(10000);
-      await jdPlantBean();
     }
   } catch (e) {
     $.logErr(e);
-    // const errMsg = `京东账号${$.index} ${$.nickName || $.UserName}\n任务执行异常，请检查执行日志 ‼️‼️`;
-    // if ($.isNode()) await notify.sendNotify(`${$.name}`, errMsg);
-    // $.msg($.name, '', `${errMsg}`)
+    const errMsg = `京东账号${$.index} ${$.nickName || $.UserName}\n任务执行异常，请检查执行日志 ‼️‼️`;
+    if ($.isNode()) await notify.sendNotify(`${$.name}`, errMsg);
+    $.msg($.name, '', `${errMsg}`)
   }
 }
 async function doGetReward() {
   console.log(`【上轮京豆】${awardState === '4' ? '采摘中' : awardState === '5' ? '可收获了' : '已领取'}`);
   if (awardState === '4') {
     //京豆采摘中...
-    message += `【上期状态】${roundList[0].tipBeanEndTitle}\n`;
+    message += `【上期状态】${roundList[1].tipBeanEndTitle}\n`;
   } else if (awardState === '5') {
     //收获
     await getReward();
@@ -146,85 +139,85 @@ async function doGetReward() {
     }
   } else if (awardState === '6') {
     //京豆已领取
-    message += `【上期兑换京豆】${roundList[0].awardBeans}个\n`;
+    message += `【上期兑换京豆】${roundList[1].awardBeans}个\n`;
   }
-  if (roundList[1].dateDesc.indexOf('本期 ') > -1) {
-    roundList[1].dateDesc = roundList[1].dateDesc.substr(roundList[1].dateDesc.indexOf('本期 ') + 3, roundList[1].dateDesc.length);
+  if (roundList[2].dateDesc.indexOf('本期 ') > -1) {
+    roundList[2].dateDesc = roundList[2].dateDesc.substr(roundList[2].dateDesc.indexOf('本期 ') + 3, roundList[2].dateDesc.length);
   }
-  message += `【本期时间】${roundList[1].dateDesc}\n`;
-  message += `【本期成长值】${roundList[1].growth}\n`;
+  message += `【本期时间】${roundList[2].dateDesc}\n`;
+  message += `【本期成长值】${roundList[2].growth}\n`;
 }
 async function doCultureBean() {
-  await plantBeanIndex();
-  if ($.plantBeanIndexResult && $.plantBeanIndexResult.code === '0') {
-    const plantBeanRound = $.plantBeanIndexResult.data.roundList[1]
-    if (plantBeanRound.roundState === '2') {
-      //收取营养液
-      if (plantBeanRound.bubbleInfos && plantBeanRound.bubbleInfos.length) console.log(`开始收取营养液`)
-      for (let bubbleInfo of plantBeanRound.bubbleInfos) {
-        console.log(`收取-${bubbleInfo.name}-的营养液`)
-        await cultureBean(plantBeanRound.roundId, bubbleInfo.nutrientsType)
-        console.log(`收取营养液结果:${JSON.stringify($.cultureBeanRes)}`)
-      }
+    await plantBeanIndex();
+    if ($.plantBeanIndexResult && $.plantBeanIndexResult.code === '0') {
+        const plantBeanRound = $.plantBeanIndexResult.data.roundList[2]
+        if (plantBeanRound.roundState === '2') {
+            //收取营养液
+            if (plantBeanRound.bubbleInfos && plantBeanRound.bubbleInfos.length) console.log(`开始收取营养液`)
+            for (let bubbleInfo of plantBeanRound.bubbleInfos) {
+                console.log(`收取-${bubbleInfo.name}-的营养液`)
+                await cultureBean(plantBeanRound.roundId, bubbleInfo.nutrientsType)
+                console.log(`收取营养液结果:${JSON.stringify($.cultureBeanRes)}`)
+            }
+        }
+    } else {
+        console.log(`plantBeanIndexResult:${JSON.stringify($.plantBeanIndexResult)}`)
     }
-  } else {
-    console.log(`plantBeanIndexResult:${JSON.stringify($.plantBeanIndexResult)}`)
-  }
 }
 async function stealFriendWater() {
-  await stealFriendList();
-  if ($.stealFriendList && $.stealFriendList.code === '0') {
-    if ($.stealFriendList.data && $.stealFriendList.data.tips) {
-      console.log('\n\n今日偷取好友营养液已达上限\n\n');
-      return
-    }
-    if ($.stealFriendList.data && $.stealFriendList.data.friendInfoList && $.stealFriendList.data.friendInfoList.length > 0) {
-      let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);
-      for (let item of $.stealFriendList.data.friendInfoList) {
-        if (new Date(nowTimes).getHours() === 20) {
-          if (item.nutrCount >= 2) {
-            // console.log(`可以偷的好友的信息::${JSON.stringify(item)}`);
-            console.log(`可以偷的好友的信息paradiseUuid::${JSON.stringify(item.paradiseUuid)}`);
-            await collectUserNutr(item.paradiseUuid);
-            console.log(`偷取好友营养液情况:${JSON.stringify($.stealFriendRes)}`)
-            if ($.stealFriendRes && $.stealFriendRes.code === '0') {
-              console.log(`偷取好友营养液成功`)
-            }
-          }
-        } else {
-          if (item.nutrCount >= 3) {
-            // console.log(`可以偷的好友的信息::${JSON.stringify(item)}`);
-            console.log(`可以偷的好友的信息paradiseUuid::${JSON.stringify(item.paradiseUuid)}`);
-            await collectUserNutr(item.paradiseUuid);
-            console.log(`偷取好友营养液情况:${JSON.stringify($.stealFriendRes)}`)
-            if ($.stealFriendRes && $.stealFriendRes.code === '0') {
-              console.log(`偷取好友营养液成功`)
-            }
-          }
+    await stealFriendList();
+    if ($.stealFriendList && $.stealFriendList.code === '0') {
+        if ($.stealFriendList.data && $.stealFriendList.data.tips) {
+            console.log('\n\n今日偷取好友营养液已达上限\n\n');
+            return
         }
-      }
+        if ($.stealFriendList.data && $.stealFriendList.data.friendInfoList && $.stealFriendList.data.friendInfoList.length > 0) {
+            let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);
+            for (let item of $.stealFriendList.data.friendInfoList) {
+                if (new Date(nowTimes).getHours() === 20) {
+                    if (item.nutrCount >= 2) {
+                        // console.log(`可以偷的好友的信息::${JSON.stringify(item)}`);
+                        console.log(`可以偷的好友的信息paradiseUuid::${JSON.stringify(item.paradiseUuid)}`);
+                        await collectUserNutr(item.paradiseUuid);
+                        console.log(`偷取好友营养液情况:${JSON.stringify($.stealFriendRes)}`)
+                        if ($.stealFriendRes && $.stealFriendRes.code === '0') {
+                            console.log(`偷取好友营养液成功`)
+                        }
+                    }
+                } else {
+                    if (item.nutrCount >= 3) {
+                        // console.log(`可以偷的好友的信息::${JSON.stringify(item)}`);
+                        console.log(`可以偷的好友的信息paradiseUuid::${JSON.stringify(item.paradiseUuid)}`);
+                        await collectUserNutr(item.paradiseUuid);
+                        console.log(`偷取好友营养液情况:${JSON.stringify($.stealFriendRes)}`)
+                        if ($.stealFriendRes && $.stealFriendRes.code === '0') {
+                            console.log(`偷取好友营养液成功`)
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        console.log(`$.stealFriendList 异常： ${JSON.stringify($.stealFriendList)}`)
     }
-  } else {
-    console.log(`$.stealFriendList 异常： ${JSON.stringify($.stealFriendList)}`)
-  }
 }
 async function doEgg() {
-  await egg();
-  if ($.plantEggLotteryRes && $.plantEggLotteryRes.code === '0') {
-    if ($.plantEggLotteryRes.data.restLotteryNum > 0) {
-      const eggL = new Array($.plantEggLotteryRes.data.restLotteryNum).fill('');
-      console.log(`目前共有${eggL.length}次扭蛋的机会`)
-      for (let i = 0; i < eggL.length; i++) {
-        console.log(`开始第${i + 1}次扭蛋`);
-        await plantEggDoLottery();
-        console.log(`天天扭蛋成功：${JSON.stringify($.plantEggDoLotteryResult)}`);
-      }
+    await egg();
+    if ($.plantEggLotteryRes && $.plantEggLotteryRes.code === '0') {
+        if ($.plantEggLotteryRes.data.restLotteryNum > 0) {
+            const eggL = new Array($.plantEggLotteryRes.data.restLotteryNum).fill('');
+            console.log(`目前共有${eggL.length}次扭蛋的机会`)
+            for (let i = 0; i < eggL.length; i++) {
+                console.log(`开始第${i + 1}次扭蛋`);
+                await plantEggDoLottery();
+                console.log(`天天扭蛋成功：${JSON.stringify($.plantEggDoLotteryResult)}`);
+            }
+        } else {
+            console.log('暂无扭蛋机会')
+        }
     } else {
-      console.log('暂无扭蛋机会')
+        console.log('查询天天扭蛋的机会失败' + JSON.stringify($.plantEggLotteryRes))
     }
-  } else {
-    console.log('查询天天扭蛋的机会失败' + JSON.stringify($.plantEggLotteryRes))
-  }
 }
 async function doTask() {
   if ($.taskList && $.taskList.length > 0) {
@@ -563,7 +556,7 @@ function shareCodesFormat() {
     if ($.shareCodesArr[$.index - 1]) {
       newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+  // console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
