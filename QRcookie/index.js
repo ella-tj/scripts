@@ -96,7 +96,7 @@ async function step1() {
         `&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
       'User-Agent':
-        'jdapp;android;10.0.2;10;network/4g;Mozilla/5.0 (Linux; Android 10; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
+        'jdapp;iPhone;10.0.10;13.5;network/4g;model/iPhone11,8;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
       Host: 'plogin.m.jd.com',
     },
   });
@@ -139,7 +139,7 @@ async function step2(cookiesObj) {
         `&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
       'User-Agent':
-        'jdapp;android;10.0.2;10;network/4g;Mozilla/5.0 (Linux; Android 10; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
+        'jdapp;iPhone;10.0.10;13.5;network/4g;model/iPhone11,8;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
       Host: 'plogin.m.jd.com',
     },
   });
@@ -180,7 +180,7 @@ async function checkLogin(user) {
       'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
       Accept: 'application/json, text/plain, */*',
       'User-Agent':
-        'jdapp;android;10.0.2;10;network/4g;Mozilla/5.0 (Linux; Android 10; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
+        'jdapp;iPhone;10.0.10;13.5;network/4g;model/iPhone11,8;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0',
     },
   });
   return response;
