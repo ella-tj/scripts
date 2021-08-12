@@ -28,7 +28,17 @@ let tuanActiveId = ``;
 let cookiesArr = [], cookie = '', message = '';
 $.tuanIds = [];
 $.appId = 10001;
-if ($.isNode()) {Object.keys(jdCookieNode).forEach((item) => {cookiesArr.push(jdCookieNode[item])});if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};if (process.env.DREAMFACTORY_FORBID_ACCOUNT) process.env.DREAMFACTORY_FORBID_ACCOUNT.split('&').map((item, index) => Number(item) === 0 ? cookiesArr = [] : cookiesArr.splice(Number(item) - 1 - index, 1))} else {cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);}
+if ($.isNode()) {
+  Object.keys(jdCookieNode).forEach((item) => {
+    cookiesArr.push(jdCookieNode[item])
+  })
+  if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
+} else {
+  cookiesArr = [
+    $.getdata("CookieJD"),
+    $.getdata("CookieJD2"),
+    ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
+}
 !(async () => {
   let openTuanCKList = openTuanCK.split(',');
   $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
@@ -99,29 +109,6 @@ if ($.isNode()) {Object.keys(jdCookieNode).forEach((item) => {cookiesArr.push(jd
           await $.wait(2000);
           if($.tuanMax){$.tuanIds.shift();j--;}
         }
-      }
-    }
-  }
-  let res = [];
-  if(helpFlag){
-    res = await getAuthorShareCode('https://raw.githubusercontent.com/star261/jd/main/code/dreamFactory_tuan.json');
-    if(!res){
-      res = [];
-    }
-    if(res.length === 0){
-      return ;
-    }
-    console.log(`\n===============开始助力作者团===================`);
-    let thisTuanID = getRandomArrayElements(res, 1)[0];
-    $.tuanMax = false;
-    for (let i = 0; i < cookiesArr.length && !$.tuanMax; i++) {
-      if(openTuanCKList.includes((i+1).toString())){
-        $.index = i + 1;
-        cookie = cookiesArr[i];
-        $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-        console.log(`账号${$.UserName} 去参加作者团： ${thisTuanID}`);
-        await JoinTuan(thisTuanID);
-        await $.wait(2000);
       }
     }
   }
