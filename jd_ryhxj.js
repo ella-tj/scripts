@@ -4,11 +4,11 @@ github：https://github.com/Ariszy/Private-Script
 boxjs：https://raw.githubusercontent.com/Ariszy/Private-Script/master/Ariszy.boxjs.json
 
 [task_local]
-#荣耀焕新季: 玩一玩- 荣耀焕新
-3 0 7-20 8 * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 荣耀焕新季
+#荣耀焕新季
+0 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 荣耀焕新季
 ================Loon==============
 [Script]
-cron "3 0 7-20 8 *" script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js,tag= 荣耀焕新季
+cron "0 1 * * *" script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js,tag= 荣耀焕新季
 ===============Surge=================
 荣耀焕新季 = type=cron,cronexp="0 1 * * *",wake-system=1,timeout=3600,script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js
 ============小火箭=========
@@ -115,7 +115,7 @@ async function doTask(){
         if(logs)$.log(data)
         if(result.code == 0){
            console.log("\n"+result.data.bizMsg+"\n")
-   await $.wait(7000)
+   await $.wait(6000)
         }else{
            $.log(result.data.bizMsg+"\n")
         }
@@ -252,10 +252,10 @@ async function getlist(){
 list2tokenArr.push(list2.productInfoVos[i].taskToken)
        }
        
-       let list4 = result.data.result.taskVos.find(item => item.taskId == 4)
-       for(let i = 0; i < list4.productInfoVos.length; i ++){
-       listtokenArr.push(4+list4.productInfoVos[i].taskToken)
-list2tokenArr.push(list4.productInfoVos[i].taskToken)
+       let list5 = result.data.result.taskVos.find(item => item.taskId == 5)
+       for(let i = 0; i < list5.productInfoVos.length; i ++){
+       listtokenArr.push(5+list5.productInfoVos[i].taskToken)
+list2tokenArr.push(list5.productInfoVos[i].taskToken)
        }
        
        let list6 = result.data.result.taskVos.find(item => item.taskId == 6)
@@ -270,10 +270,10 @@ list2tokenArr.push(list6.productInfoVos[i].taskToken)
 list2tokenArr.push(list7.shoppingActivityVos[i].taskToken)
        }
     
-       let list8 = result.data.result.taskVos.find(item => item.taskId == 8)
-       listtokenArr.push(8+list8.simpleRecordInfoVo.taskToken)
-list2tokenArr.push(list8.simpleRecordInfoVo.taskToken)
-       
+       let list10 = result.data.result.taskVos.find(item => item.taskId == 10)
+       for(let i = 0; i < list10.brandMemberVos.length; i ++){listtokenArr.push(10+list10.brandMemberVos[i].taskToken)
+list2tokenArr.push(list10.brandMemberVos[i].taskToken)
+       }
        let list11 = result.data.result.taskVos.find(item => item.taskId == 11)
        for(let i = 0; i < list11.followShopVo.length; i ++){
    listtokenArr.push(11+list11.followShopVo[i].taskToken)
