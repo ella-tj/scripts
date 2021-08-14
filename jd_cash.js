@@ -24,7 +24,7 @@ const $ = new Env('签到领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = false;
@@ -87,7 +87,7 @@ async function jdCash() {
   $.signMoney = 0;
   await index()
   await shareCodesFormat()
-  await helpFriends()
+ //await helpFriends() //取消助力
   await getReward()
   await getReward('2');
   $.exchangeBeanNum = 0;
@@ -161,7 +161,7 @@ function index(info=false) {
                     await $.wait(5000)
                   }
                 }
-                else if (task.type === 15 || task.type===3 || task.type===5 || task.type===17 || task.type===21) {
+                else if (task.type === 16 || task.type===3 || task.type===5 || task.type===17 || task.type===21) {
                   for (let i = task.doTimes; i < task.times; ++i) {
                     console.log(`去做${task.name}任务 ${i+1}/${task.times}`)
                     await doTask(task.type, task.jump.params.url)
@@ -228,7 +228,7 @@ function helpFriend(helpInfo) {
 }
 function doTask(type,taskInfo) {
   return new Promise((resolve) => {
-    $.post(taskUrl("cash_doTask",{"taskInfo":taskInfo,"type":type}), (err, resp, data) => {
+    $.get(taskUrl("cash_doTask",{"type":type,"taskInfo":taskInfo}), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -252,7 +252,7 @@ function doTask(type,taskInfo) {
     })
   })
 }
-function getReward(source = 2) {
+function getReward(source = 1) {
   return new Promise((resolve) => {
     $.get(taskUrl("cash_mob_reward",{"source": Number(source),"rewardNode":""}), (err, resp, data) => {
       try {
@@ -449,7 +449,7 @@ function taskUrl(functionId, body = {}) {
       'Cookie': cookie,
       'Host': 'api.m.jd.com',
       'Connection': 'keep-alive',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'Content-Type': 'application/json',
       'Referer': 'http://wq.jd.com/wxapp/pages/hd-interaction/index/index',
       'User-Agent': $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
       'Accept-Language': 'zh-cn',
