@@ -26,7 +26,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let helpAuthor=false; // 帮助作者
 const randomCount = $.isNode() ? 0 : 5;
-let jdNotify = true; // 是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = false; // 是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
 if ($.isNode()) {
@@ -92,7 +92,7 @@ async function jdWish() {
   $.assistStatus = 0;
   await getTaskList(true)
 
-  await helpFriends()
+//await helpFriends()  //取消助力
   await getUserInfo()
   $.nowBean = parseInt($.totalBeanNum)
   $.nowNum = parseInt($.totalNum)
