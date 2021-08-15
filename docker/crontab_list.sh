@@ -183,7 +183,7 @@
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 #七夕情报局
-36 0,10,21 4-15 8 * node /scripts/m_qixi.js >> /scripts/logs/m_qixi.log 2>&1
+#36 0,10,21 4-15 8 * node /scripts/m_qixi.js >> /scripts/logs/m_qixi.log 2>&1
 # 骁龙品牌日
 18 9,19 13-25 8 * node /scripts/m_xl.js >> /scripts/logs/m_xl.log 2>&1
 # 汽车生活节
