@@ -165,7 +165,7 @@
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
 #愤怒的现金
-0,30 0 * * * node /scripts/m_angryCash.js >> /scripts/logs/m_angryCash.log 2>&1
+#0,30 0 * * * node /scripts/m_angryCash.js >> /scripts/logs/m_angryCash.log 2>&1
 #愤怒的锦鲤
 0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
 #赚30元
