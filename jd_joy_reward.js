@@ -6,7 +6,7 @@ Last Modified time: 2021-06-06 21:22:37
 兑换奖品成功后才会有系统弹窗通知
 每日京豆库存会在0:00、8:00、16:00更新。
 脚本兼容: Quantumult X, Surge, Loon, JSBox, Node.js
-==============Quantumult X==============
+==============Quantumult X============== 
 [task_local]
 #宠汪汪积分兑换奖品
 59 7,15,23 * * * jd_joy_reward.js, tag=宠汪汪积分兑换奖品, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png, enabled=true
