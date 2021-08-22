@@ -187,7 +187,7 @@
 # 骁龙品牌日
 18 9,19 13-25 8 * node /scripts/m_xl.js >> /scripts/logs/m_xl.log 2>&1
 # 汽车生活节
-20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
+#20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
 # 零食街
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 开学充电站
