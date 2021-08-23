@@ -108,6 +108,8 @@
 30 6 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
 # 早起赢现金
 30 7 * * * node /scripts/jd_morningSc.js >> /scripts/logs/jd_morningSc.log 2>&1
+# 领券中心签到
+15 8 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 
 ##############京东-玩一玩任务区##############
 #京东健康社区
