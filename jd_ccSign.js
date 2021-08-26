@@ -26,7 +26,7 @@ const $ = new Env('领券中心签到');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -96,9 +96,13 @@ async function getCouponConfig() {
             if (data.result.couponConfig.signNecklaceDomain) {
               console.log(`活动已升级，暂时无法解决，跳过执行`)
             } else {
-              let functionId = `ccSignInNew`
-              let body = `%7B%22childActivityUrl%22%3A%22openapp.jdmobile%3A%2F%2Fvirtual%3Fparams%3D%7B%5C%22category%5C%22%3A%5C%22jump%5C%22%2C%5C%22des%5C%22%3A%5C%22couponCenter%5C%22%7D%22%2C%22monitorRefer%22%3A%22appClient%22%2C%22monitorSource%22%3A%22cc_sign_android_index_config%22%2C%22pageClickKey%22%3A%22Coupons_GetCenter%22%7D`
-              await ccSignInNew(functionId, body)
+              if (data.result.couponConfig.signNewDomain.roundData.ynSign === '1') {
+                console.log(`签到失败：今日已签到~`)
+              } else {
+                let functionId = `ccSignInNew`
+                let body = `%7B%22childActivityUrl%22%3A%22openapp.jdmobile%3A%2F%2Fvirtual%3Fparams%3D%7B%5C%22category%5C%22%3A%5C%22jump%5C%22%2C%5C%22des%5C%22%3A%5C%22couponCenter%5C%22%7D%22%2C%22monitorRefer%22%3A%22appClient%22%2C%22monitorSource%22%3A%22cc_sign_android_index_config%22%2C%22pageClickKey%22%3A%22Coupons_GetCenter%22%7D`
+                await ccSignInNew(functionId, body)
+              }
             }
           }
         }
@@ -125,8 +129,6 @@ async function ccSignInNew(functionId, body) {
             data = JSON.parse(data)
             if (data.busiCode === '0') {
               console.log(`签到成功：获得 ${data.result.signResult.signData.amount} 红包`)
-            } else if (data.busiCode === '1002') {
-              console.log(`今日已签到`)
             } else {
               console.log(`签到失败：${data.message}`)
             }
