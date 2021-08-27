@@ -24,8 +24,6 @@
 1 6-21/3 * * * node /scripts/jd_618redpacket.js >> /scripts/logs/jd_618redpacket.log 2>&1
 # 金机奖投票
 33 4,7 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
-# 来电好物季
-0 1 * * * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -129,9 +127,9 @@
 # 京东宠汪汪邀请助力与赛跑助力
 15 10 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 京东手机狂欢城活动
-0 1-19/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+#0 1-19/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东手机狂欢城助力
-10 1,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+#10 1,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 极速版 汪汪乐园
 20 1-23/1 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 # 极速版 汪汪乐园每日助力
@@ -186,8 +184,6 @@
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 #七夕情报局
 #36 0,10,21 4-15 8 * node /scripts/m_qixi.js >> /scripts/logs/m_qixi.log 2>&1
-# 骁龙品牌日
-18 9,19 13-25 8 * node /scripts/m_xl.js >> /scripts/logs/m_xl.log 2>&1
 # 汽车生活节
 #20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
 # 零食街
