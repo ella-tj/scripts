@@ -2,7 +2,7 @@
 const QYWX_KEY = '' || process.env.QYWX_KEY;
 const QR_QYWX_AM = '' || process.env.QR_QYWX_AM;
 const UPDATE_API = '' || process.env.UPDATE_API;
-const JD_UA = `jdapp;iPhone;10.1.2;14.7.1;${randomString(40)};network/wifi;model/iPhone10,2;addressid/4091160336;appBuild/167802;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`;
+const JD_UA = `jdapp;android;10.1.2;10;9313532693666623-1646335643167303;network/wifi;model/MI 8;addressid/2672409531;aid/915b9ff2ad3e4a70;oaid/ed778aab7124ebf8;osVer/29;appBuild/89743;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045715 Mobile Safari/537.36`;
 
 const express = require('express');
 const got = require('got');
