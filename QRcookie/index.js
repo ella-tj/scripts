@@ -2,6 +2,7 @@
 const QYWX_KEY = '' || process.env.QYWX_KEY;
 const QR_QYWX_AM = '' || process.env.QR_QYWX_AM;
 const UPDATE_API = '' || process.env.UPDATE_API;
+const JD_UA = `jdapp;iPhone;10.1.2;14.7.1;${randomString(40)};network/wifi;model/iPhone10,2;addressid/4091160336;appBuild/167802;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`;
 
 const express = require('express');
 const got = require('got');
@@ -13,6 +14,18 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * 生成随机 iPhoneID
+ * @returns {string}
+ */
+ function randomString(e) {
+  e = e || 32;
+  let t = "abcdef0123456789", a = t.length, n = "";
+  for (i = 0; i < e; i++)
+    n += t.charAt(Math.floor(Math.random() * a));
+  return n
+}
 
 /**
  * 字符串工具函数
@@ -95,8 +108,7 @@ async function step1() {
         'https://plogin.m.jd.com/login/login?appid=300' +
         `&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
-      'User-Agent':
-        'Mozilla/5.0 (Linux; Android 11; M2011K2C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36',
+        'User-Agent': JD_UA,
       Host: 'plogin.m.jd.com',
     },
   });
@@ -138,8 +150,7 @@ async function step2(cookiesObj) {
         'https://plogin.m.jd.com/login/login?appid=300' +
         `&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${timeStamp}` +
         '&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport',
-      'User-Agent':
-        'Mozilla/5.0 (Linux; Android 11; M2011K2C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36',
+        'User-Agent': JD_UA,
       Host: 'plogin.m.jd.com',
     },
   });
@@ -179,8 +190,7 @@ async function checkLogin(user) {
       Connection: 'Keep-Alive',
       'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
       Accept: 'application/json, text/plain, */*',
-      'User-Agent':
-        'Mozilla/5.0 (Linux; Android 11; M2011K2C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36',
+      'User-Agent': JD_UA,
     },
   });
   return response;
