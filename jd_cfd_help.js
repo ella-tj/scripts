@@ -32,7 +32,7 @@ $.InviteList = []
 $.innerInviteList = [];
 const HelpAuthorFlag = true;//是否助力  true 助力，false 不助力
 
-let codeIndex = $.getval('gua_wealth_island_codeId') || '1,2,3,4,5,6' // 定义提交助力码的账号如2,3,5
+let codeIndex = $.getval('gua_wealth_island_codeId') || '' // 定义提交助力码的账号如2,3,5
 if ($.isNode() && process.env.gua_wealth_island_codeId) {
   codeIndex = process.env.gua_wealth_island_codeId;
 }
