@@ -134,6 +134,10 @@
 20 1-23/1 * * * node /scripts/jd_joy_park.js >> /scripts/logs/jd_joy_park.log 2>&1
 # 极速版 汪汪乐园每日助力
 30 23 * * * node /scripts/jd_joy_park_help.js >> /scripts/logs/jd_joy_park_help.log 2>&1
+# 跳跳乐瓜分京豆脚本
+30 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
+# 内容鉴赏官
+15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
@@ -184,8 +188,8 @@
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
-#七夕情报局
-#36 0,10,21 4-15 8 * node /scripts/m_qixi.js >> /scripts/logs/m_qixi.log 2>&1
+#京小鸽吾悦寄
+36 9 * * * node /scripts/m_jxg.js >> /scripts/logs/m_jxg.log 2>&1
 # 汽车生活节
 #20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
 # 零食街
