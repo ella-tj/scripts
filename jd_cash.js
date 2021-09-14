@@ -21,7 +21,7 @@ const $ = new Env('签到领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = false;
@@ -129,7 +129,7 @@ function index(info=false) {
                   message += `当前现金：${data.data.result.signMoney}元`;
                   allMessage += `京东账号${$.index}${$.nickName}\n${message}${$.index !== cookiesArr.length ? '\n\n' : ''}`;
                 }
-                console.log(`\n\n当前现金：${data.data.result.signMoney}元`);
+                console.log(`\n\n【京东账号${$.index}】当前现金：${data.data.result.signMoney}元`);
                 return
               }
               $.signMoney = data.data.result.signMoney;
