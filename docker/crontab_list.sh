@@ -108,6 +108,8 @@
 30 7 * * * node /scripts/jd_morningSc.js >> /scripts/logs/jd_morningSc.log 2>&1
 # 领券中心签到
 15 8 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
+# 热血心跳,狂解压
+5 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
 
 ##############京东-玩一玩任务区##############
 #京东健康社区
@@ -196,3 +198,9 @@
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
 20 6,7 * * * node /scripts/m_wish.js >> /scripts/logs/m_wish.log 2>&1
+# 芯意制造盒
+50 0 * * * node /scripts/m_xyzzh.js >> /scripts/logs/m_xyzzh.log 2>&1
+# 东东世界
+#20 6,7 * * * node /scripts/m_ddworld.js >> /scripts/logs/m_ddworld.log 2>&1
+# 东东玩家
+20 0 * * * node /scripts/m_ddwj.js >> /scripts/logs/m_ddwj.log 2>&1
