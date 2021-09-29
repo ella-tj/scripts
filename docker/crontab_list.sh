@@ -140,6 +140,10 @@
 30 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+# 集魔方
+11 10 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+# 芥末签到
+11 0,9 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
@@ -185,7 +189,7 @@
 #东东超市商品兑换
 59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
 # 抢京豆
-2 0 * * * node /scripts/m_angryBean.js >> /scripts/logs/m_angryBean.log 2>&1
+#2 0 * * * node /scripts/m_angryBean.js >> /scripts/logs/m_angryBean.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
@@ -203,4 +207,4 @@
 # 东东世界
 #20 6,7 * * * node /scripts/m_ddworld.js >> /scripts/logs/m_ddworld.log 2>&1
 # 东东玩家
-20 0 * * * node /scripts/m_ddwj.js >> /scripts/logs/m_ddwj.log 2>&1
+#20 0 * * * node /scripts/m_ddwj.js >> /scripts/logs/m_ddwj.log 2>&1
