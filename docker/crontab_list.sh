@@ -203,7 +203,7 @@
 # 众筹许愿池
 20 6,7 * * * node /scripts/m_wish.js >> /scripts/logs/m_wish.log 2>&1
 # 芯意制造盒
-50 0 * * * node /scripts/m_xyzzh.js >> /scripts/logs/m_xyzzh.log 2>&1
+#50 0 * * * node /scripts/m_xyzzh.js >> /scripts/logs/m_xyzzh.log 2>&1
 # 东东世界
 #20 6,7 * * * node /scripts/m_ddworld.js >> /scripts/logs/m_ddworld.log 2>&1
 # 东东玩家
