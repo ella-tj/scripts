@@ -142,6 +142,8 @@
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 # 集魔方
 11 10 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+# 京东小魔方
+31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 芥末签到
 11 0,9 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 
@@ -194,8 +196,6 @@
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
-#京小鸽吾悦寄
-36 9 * * * node /scripts/m_jxg.js >> /scripts/logs/m_jxg.log 2>&1
 # 汽车生活节
 #20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
 # 零食街
