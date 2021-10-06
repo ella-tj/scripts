@@ -109,7 +109,7 @@
 # 领券中心签到
 15 8 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 热血心跳,狂解压
-5 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
+#5 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
 
 ##############京东-玩一玩任务区##############
 #京东健康社区
@@ -145,9 +145,9 @@
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 芥末签到
-11 0,9 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
+11 22 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 芥么赚豪礼
-37 0,11 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
+37 22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
