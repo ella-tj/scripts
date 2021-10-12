@@ -21,7 +21,7 @@ const $ = new Env('京东小魔方');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let uuid
@@ -164,28 +164,30 @@ async function queryInteractiveInfo(encryptProjectId, sourceCode) {
                   console.log(`助力已满`)
                 }
               } else if (vo.ext.extraType !== "brandMemberList") {
-                console.log(`去做【${vo.assignmentName}】`)
-                if (vo.completionCnt < vo.assignmentTimesLimit) {
-                  $.type = vo.rewards[0].rewardType
-                  for (let key of Object.keys(vo.ext[vo.ext.extraType])) {
-                    let task = vo.ext[vo.ext.extraType][key]
-                    if (task.status !== 2) {
-                      if (vo.ext.extraType !== "productsInfo" && vo.ext.extraType !== "addCart") {
-                        await doInteractiveAssignment(vo.ext.extraType, encryptProjectId, sourceCode, vo.encryptAssignmentId, task.itemId, "1")
-                        await $.wait((vo.ext.waitDuration * 1000) || 2000)
-                      }
-                      if (vo.ext.extraType === "browseShop") {
-                        $.rewardmsg = `完成成功：获得${vo.rewards[0].rewardValue}${vo.rewards[0].rewardName}`
-                        await qryViewkitCallbackResult(encryptProjectId, vo.encryptAssignmentId, task.itemId)
-                      } else {
-                        $.complete = false
-                        await doInteractiveAssignment(vo.ext.extraType, encryptProjectId, sourceCode, vo.encryptAssignmentId, task.itemId, "0")
-                        if ($.complete) break
+                if (Object.keys(vo.ext).length && Object.keys(vo.ext[vo.ext.extraType]).length) {
+                  console.log(`去做【${vo.assignmentName}】`)
+                  if (vo.completionCnt < vo.assignmentTimesLimit) {
+                    $.type = vo.rewards[0].rewardType
+                    for (let key of Object.keys(vo.ext[vo.ext.extraType])) {
+                      let task = vo.ext[vo.ext.extraType][key]
+                      if (task.status !== 2) {
+                        if (vo.ext.extraType !== "productsInfo" && vo.ext.extraType !== "addCart") {
+                          await doInteractiveAssignment(vo.ext.extraType, encryptProjectId, sourceCode, vo.encryptAssignmentId, task.itemId, "1")
+                          await $.wait((vo.ext.waitDuration * 1000) || 2000)
+                        }
+                        if (vo.ext.extraType === "browseShop") {
+                          $.rewardmsg = `完成成功：获得${vo.rewards[0].rewardValue}${vo.rewards[0].rewardName}`
+                          await qryViewkitCallbackResult(encryptProjectId, vo.encryptAssignmentId, task.itemId)
+                        } else {
+                          $.complete = false
+                          await doInteractiveAssignment(vo.ext.extraType, encryptProjectId, sourceCode, vo.encryptAssignmentId, task.itemId, "0")
+                          if ($.complete) break
+                        }
                       }
                     }
+                  } else {
+                    console.log(`任务已完成`)
                   }
-                } else {
-                  console.log(`任务已完成`)
                 }
               }
             }
