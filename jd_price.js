@@ -25,6 +25,11 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const jsdom = $.isNode() ? require('jsdom') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message, allMessage = '';
+
+const thefs = require('fs');
+const thepath = '/jd/scripts/0sendNotify_Annyooo.js'
+const notifyTip = $.isNode() ? process.env.MY_NOTIFYTIP : false;
+
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -90,7 +95,8 @@ async function siteppM_skuOnceApply() {
     sid: "",
     type: "3",
     forcebot: "",
-    token: $.token
+    token: $.token,
+    feSt: "s"
   }
   return new Promise(async resolve => {
     $.post(taskUrl("siteppM_skuOnceApply", body), async (err, resp, data) => {
@@ -102,6 +108,7 @@ async function siteppM_skuOnceApply() {
           if (safeGet(data)) {
             data = JSON.parse(data)
             if (data.flag) {
+              await $.wait(20 * 1000)
               await siteppM_appliedSuccAmount()
             } else {
               console.log(`保价失败：${data.responseMessage}`)
@@ -117,15 +124,15 @@ async function siteppM_skuOnceApply() {
     })
   })
 }
-function siteppM_appliedSuccAmount() {
+async function siteppM_appliedSuccAmount() {
   let body = {
     sid: "",
     type: "3",
     forcebot: "",
     num: 15
   }
-  return new Promise(resolve => {
-    $.post(taskUrl("siteppM_appliedSuccAmount", body), (err, resp, data) => {
+  return new Promise(async resolve => {
+    $.post(taskUrl("siteppM_appliedSuccAmount", body), async (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
@@ -136,6 +143,13 @@ function siteppM_appliedSuccAmount() {
             if (data.flag) {
               console.log(`保价成功：返还${data.succAmount}元`)
               message += `保价成功：返还${data.succAmount}元\n`
+
+              let the_msg = `本次保价成功：返还${data.succAmount}元`
+              if ($.isNode() && thefs.existsSync(thepath) && notifyTip){
+                  let thenotify = require(thepath);
+                  await thenotify.sendNotify(`${$.name}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n${the_msg}`);
+              }
+
             } else {
               console.log(`保价失败：没有可保价的订单`)
             }
