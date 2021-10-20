@@ -18,10 +18,6 @@
 35 1,2,3, * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 特物Z|万物皆可国创
 30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
-#发财大赢家
-1 1 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
-#发财大赢家翻翻乐
-1 6-21/3 * * * node /scripts/jd_618redpacket.js >> /scripts/logs/jd_618redpacket.log 2>&1
 # 金机奖投票
 33 4,7 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
 
@@ -188,8 +184,6 @@
 0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
 #赚30元
 0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
-#发财大赢家助力
-0 0 * * * node /scripts/m_dyj_help.js >> /scripts/logs/m_dyj_help.log 2>&1
 #粉丝互动
 34 6,18 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #东东超市商品兑换
