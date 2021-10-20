@@ -148,6 +148,8 @@
 11 22 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 芥么赚豪礼
 37 22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
+# 城城领现金
+0 0-23/5,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
