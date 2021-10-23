@@ -20,6 +20,12 @@
 30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 金机奖投票
 33 4,7 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
+# 预售福利机
+5 1,2 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
+# 惊喜大作战
+50 1 * * * node /scripts/jd_jxdzz.js >> /scripts/logs/jd_jxdzz.log 2>&1
+# 环游记
+20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -125,7 +131,7 @@
 # 京东宠汪汪邀请助力与赛跑助力
 15 10 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 京东手机狂欢城活动
-#0 1-19/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+0 1-19/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 京东手机狂欢城助力
 #10 1,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 极速版 汪汪乐园
@@ -146,6 +152,8 @@
 37 22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 # 城城领现金
 0 0-23/5,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
+# 东东超市抢京豆
+11 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
@@ -194,8 +202,8 @@
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
-# 汽车生活节
-#20 1 * * * node /scripts/m_qcshj.js >> /scripts/logs/m_qcshj.log 2>&1
+# 城城分现金助力
+0 0 * * * node /scripts/m_ccfxj_help.py >> /scripts/logs/m_ccfxj_help.log 2>&1
 # 零食街
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
