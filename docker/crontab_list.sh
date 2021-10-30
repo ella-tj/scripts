@@ -154,6 +154,8 @@
 0 0-23/5,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 # 东东超市抢京豆
 11 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
+# 省钱大赢家之翻翻乐
+20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
