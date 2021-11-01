@@ -19,7 +19,7 @@
 # 特物Z|万物皆可国创
 30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 金机奖投票
-33 4,7 8-20 8 * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
+33 4,7 8-20 * * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
 # 预售福利机
 5 1,2 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 # 惊喜大作战
@@ -33,7 +33,7 @@
 # 京东超级盒子
 24 3,13 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 # 双11星推官
-0 0-23/5,22 * 11 * node /scripts/jd_1111xtg.js >> /scripts/logs/jd_1111xtg.log 2>&1
+12 0-23/5 * 11 * node /scripts/jd_1111xtg.js >> /scripts/logs/jd_1111xtg.log 2>&1
 
 ##############长期活动##############
 # 签到
