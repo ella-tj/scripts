@@ -26,6 +26,14 @@
 50 1 * * * node /scripts/jd_jxdzz.js >> /scripts/logs/jd_jxdzz.log 2>&1
 # 环游记
 20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
+# 潮玩儿制躁团
+23 11,12 * * * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
+# 发财挖宝助力
+20 2 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
+# 京东超级盒子
+24 3,13 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
+# 双11星推官
+0 0-23/5,22 * 11 * node /scripts/jd_1111xtg.js >> /scripts/logs/jd_1111xtg.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -150,8 +158,6 @@
 11 22 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 # 芥么赚豪礼
 37 22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
-# 城城领现金
-0 0-23/5,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 # 东东超市抢京豆
 11 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 省钱大赢家之翻翻乐
