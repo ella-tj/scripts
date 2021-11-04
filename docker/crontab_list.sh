@@ -28,8 +28,6 @@
 20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 # 潮玩儿制躁团
 23 11,12 * * * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
-# 发财挖宝助力
-20 2 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 京东超级盒子
 24 3,13 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 # 双11星推官
@@ -161,7 +159,7 @@
 # 东东超市抢京豆
 11 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 省钱大赢家之翻翻乐
-20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+#20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 
 ##############京喜脚本任务区##############
 # 京喜签到
@@ -211,7 +209,7 @@
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 # 城城分现金助力
-0 0 * * * node /scripts/m_ccfxj_help.py >> /scripts/logs/m_ccfxj_help.log 2>&1
+#0 0 * * * node /scripts/m_ccfxj_help.py >> /scripts/logs/m_ccfxj_help.log 2>&1
 # 零食街
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
