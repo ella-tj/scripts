@@ -32,6 +32,14 @@
 24 3,13 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 # 双11星推官
 12 0-23/5 * 11 * node /scripts/jd_1111xtg.js >> /scripts/logs/jd_1111xtg.log 2>&1
+# 选品官
+27 4,14 1-13,22-31 10,11 * node /scripts/jd_xpg.js >> /scripts/logs/jd_xpg.log 2>&1
+# 手机竞猜
+0 2 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
+# 牛牛福利
+1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
+# 京东签到图形验证
+16 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 
 ##############长期活动##############
 # 签到
