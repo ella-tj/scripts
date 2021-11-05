@@ -5,11 +5,12 @@
  * 
  * 东东电竞经理
  * 活动地址：https://xinruidddj-isv.isvjcloud.com
+ * 活动入口：东东农场 - 东东乐园 - 电竞经理
  * 活动时间：长期
  * 
  * 账号内循环助力
  * 
- * 推荐cron: 15 10 * * * 
+15 10 * * * jd_Elecsport.js
  * 环境变量:
  *     - export ZOO_OPENCARD="true" //默认不开通会员
  */
