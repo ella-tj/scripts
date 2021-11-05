@@ -40,6 +40,18 @@
 1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 # 京东签到图形验证
 16 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
+# 积分换话费
+33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
+# 东东世界
+17 1,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
+# 东东世界兑换
+3 0,17 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
+# 东东超市兑换奖品
+59 23 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
+# 双11特务
+10 9,13,15,16,19,20 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
+# 电器盲盒抽京豆 (11.30?)
+13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -209,7 +221,7 @@
 #粉丝互动
 34 6,18 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
 #东东超市商品兑换
-59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
+#59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
 # 抢京豆
 #2 0 * * * node /scripts/m_angryBean.js >> /scripts/logs/m_angryBean.log 2>&1
 # 升级赚京豆
