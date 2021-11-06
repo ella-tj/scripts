@@ -52,6 +52,8 @@
 10 9,13,15,16,19,20 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
 # 电器盲盒抽京豆 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
+# 双11环游记大富翁
+0 2 1-11 11 * node /scripts/jd_travel_shop.js >> /scripts/logs/jd_travel_shop.log 2>&1
 
 ##############长期活动##############
 # 签到
