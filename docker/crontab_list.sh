@@ -230,6 +230,8 @@
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 # 城城分现金助力
 #0 0 * * * node /scripts/m_ccfxj_help.py >> /scripts/logs/m_ccfxj_help.log 2>&1
+# 京东饭粒
+1 0 * * * node /scripts/m_fanli.py >> /scripts/logs/m_fanli.log 2>&1
 # 零食街
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
