@@ -19,7 +19,7 @@ cookies = ''
 coinToBeans = ''
 
 #多账号并发，默认关闭 ENV设置开启： export blueCoin_Cc=True
-blueCoin_Cc = True
+blueCoin_Cc = False
 #单击次数，同时发生点击兑换按钮次数，适当调整。
 dd_thread = 5
 ###############################################
