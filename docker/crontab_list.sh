@@ -48,8 +48,6 @@
 3 0,17 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 # 东东超市兑换奖品
 59 23 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
-# 双11特务
-10 9,13,15,16,19,20 2-8 11 * node /scripts/jd_1111superBrand.js >> /scripts/logs/jd_1111superBrand.log 2>&1
 # 电器盲盒抽京豆 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 # 双11环游记大富翁
@@ -93,7 +91,7 @@
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
 # 赚京豆(微信小程序)
-12 1,2,3 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
+10 1,7,22 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 京东快递签到
 30 5 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 京东汽车(签到满500赛点可兑换500京豆)
