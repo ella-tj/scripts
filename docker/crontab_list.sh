@@ -46,8 +46,6 @@
 17 1,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 东东世界兑换
 3 0,17 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
-# 东东超市兑换奖品
-59 23 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 电器盲盒抽京豆 (11.30?)
 13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 # 双11环游记大富翁
@@ -190,8 +188,6 @@
 59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
-# 京喜工厂开团
-*/10 0 * * * node /scripts/jd_jxkt.js >> /scripts/logs/jd_jxkt.log 2>&1
 # 京喜农场
 30 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 京喜牧场
@@ -210,26 +206,14 @@
 10 8 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log 2>&1
 10 0 * * * node /scripts/jddj_bean.js >> /scripts/logs/jddj_bean.log 2>&1
 10 0,3,8,11,17 * * * node /scripts/jddj_fruit.js >> /scripts/logs/jddj_fruit.log 2>&1
-#愤怒的现金
-#0,30 0 * * * node /scripts/m_angryCash.js >> /scripts/logs/m_angryCash.log 2>&1
-#愤怒的锦鲤
-0 0 * * * node /scripts/m_angryKoi.js >> /scripts/logs/m_angryKoi.log 2>&1
 #赚30元
 0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
 #粉丝互动
 34 6,18 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
-#东东超市商品兑换
-#59 23 * * * python3 /scripts/m_blueCoin.py >> /scripts/logs/m_blueCoin.log 2>&1
-# 抢京豆
-#2 0 * * * node /scripts/m_angryBean.js >> /scripts/logs/m_angryBean.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
-# 城城分现金助力
-#0 0 * * * node /scripts/m_ccfxj_help.py >> /scripts/logs/m_ccfxj_help.log 2>&1
-# 京东饭粒
-1 0 * * * node /scripts/m_fanli.py >> /scripts/logs/m_fanli.log 2>&1
 # 零食街
 18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
