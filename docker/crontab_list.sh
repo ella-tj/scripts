@@ -127,7 +127,7 @@
 # 领金贴
 5 6 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 送豆得豆
-45 4 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
+45 1,2,3 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 早起福利
 30 6 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
 # 早起赢现金
@@ -225,3 +225,5 @@
 1,15,30 0 * * * python3 /mod_scripts/jd_jxgc_tuan.py >> /scripts/logs/jd_jxgc_tuan.log 2>&1
 # 全民抢京豆
 0 0 * 10,11 * python3 /mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
+# 京东饭粒
+5 1 * 10,11 * python3 /mod_scripts/jd_fanli.py >> /scripts/logs/jd_fanli.log 2>&1
