@@ -2,8 +2,6 @@
 50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
-#mod_scripts
-55 6,16,23 * * * sh +x /scripts/mod_scripts/shell_script_mod.sh >> /scripts/logs/shell_script_mod.log 2>&1
 
 ##############短期活动##############
 #京东极速版红包(活动时间：2021-5-5至2021-5-31)
@@ -220,3 +218,10 @@
 #20 6,7 * * * node /scripts/m_ddworld.js >> /scripts/logs/m_ddworld.log 2>&1
 # 东东玩家
 #20 0 * * * node /scripts/m_ddwj.js >> /scripts/logs/m_ddwj.log 2>&1
+##############mod_scripts##############
+# 东东超市商品兑换
+59 23 * * * python3 /mod_scripts/jd_blueCoin.py >> /scripts/logs/jd_blueCoin.log 2>&1
+# 京喜工厂开团
+1,15,30 0 * * * python3 /mod_scripts/jd_jxgc_tuan.py >> /scripts/logs/jd_jxgc_tuan.log 2>&1
+# 全民抢京豆
+0 0 * 10,11 * python3 /mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
