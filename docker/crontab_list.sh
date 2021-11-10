@@ -2,6 +2,8 @@
 50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
+#mod_scripts
+55 6,16,23 * * * sh +x /scripts/mod_scripts/shell_script_mod.sh >> /scripts/logs/shell_script_mod.log 2>&1
 
 ##############短期活动##############
 #京东极速版红包(活动时间：2021-5-5至2021-5-31)
