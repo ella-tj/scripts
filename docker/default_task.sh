@@ -247,6 +247,9 @@ crontab $mergedListFile
 echo "第11步将仓库的docker_entrypoint.sh脚本更新至系统/usr/local/bin/docker_entrypoint.sh内..."
 cat /scripts/docker/docker_entrypoint.sh >/usr/local/bin/docker_entrypoint.sh
 
+echo "追加mod_scripts定时任务"
+cat /scripts/mod_scripts/remote_crontab_list.sh >> /scripts/docker/merged_list_file.sh
+
 echo "发送通知"
 export NOTIFY_CONTENT="脚本更新完成✅"
 cd /scripts/docker
