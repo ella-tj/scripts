@@ -18,7 +18,7 @@ jd_scripts:
   # 因为更换仓库地址可能git pull的dns解析不到，可以在配置追加hosts
   extra_hosts:
     - "gitee.com:180.97.125.228"
-    - "github.com:13.229.188.59"
+    - "github.com:192.30.255.112"
     - "raw.githubusercontent.com:151.101.228.133"
   environment:
     #脚本更新仓库地址，配置了会切换到对应的地址
@@ -49,7 +49,7 @@ jd_scripts:
     #企业微信机器人通知
     - QYWX_AM=
     
-     #####脚本互助码变量区#####
+    #####脚本互助码变量区#####
     #单容器多账号自动互助
     - ENABLE_AUTO_HELP=true
     #京东种豆得豆
