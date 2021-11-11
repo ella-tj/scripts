@@ -197,9 +197,7 @@
 # 试用
 30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
 #赚30元
-0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
-#粉丝互动
-34 6,18 * * * node /scripts/m_wxFans.js >> /scripts/logs/m_wxFans.log 2>&1
+#0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
