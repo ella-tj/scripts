@@ -49,7 +49,7 @@ jd_scripts:
     #企业微信机器人通知
     - QYWX_AM=
     
-    #####脚本互助码变量区#####
+     #####脚本互助码变量区#####
     #单容器多账号自动互助
     - ENABLE_AUTO_HELP=true
     #京东种豆得豆
@@ -64,33 +64,33 @@ jd_scripts:
     - QRcookie_ENABLE=
     #前端扫码企业微信通知
     - QR_QYWX_AM=
-    #东东超市商品兑换与并发执行
-    - coinToBeans = '京豆包'
-    - blueCoin_Cc = True
     #不执行的脚本
     - DO_NOT_RUN_SCRIPTS=
-    #财富岛热气球挂机
-    - CFD_LOOP_ENABLE=
     #京东试用是否运行
-    - JD_TRY=
+    - JD_TRY=false
     #京东试用不执行的账号
     - DONOT_TRY_ACCOUNT=
     #早起赢现金
     - morningScPins=
-    #愤怒的锦鲤
-    - kois=
-    #愤怒的现金
-    - cashHelpPins=
-    #签到领现金兑换
-    - exchangeAccounts=""
     #赚30元
     - earn30Pins=
     #发财大赢家助力
     - dyjHelpPins=
-    #京喜单独开团
-    - OPEN_DREAMFACTORY_TUAN=""
-    #抢京豆
-    - angryBeanPins=
+
+    #####MOD脚本变量区#####
+    # 关闭cookie有效检测
+    - JD_COOKIE_CHECK="false"
+    #抢京豆账号与通知
+    - qjd_zlzh=
+    - qjd_isNotice="true"
+    #京喜工厂开团
+    - jxgc_kaituan=
+    #东东超市商品兑换商品 并发 次数
+    - coinToBeans=万能的京豆
+    - blueCoin_Cc=False
+    - dd_thread=5
+    #赚京豆
+    - zlzh=
     
 
     #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
