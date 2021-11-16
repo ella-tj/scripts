@@ -24,14 +24,6 @@
 50 1 * * * node /scripts/jd_jxdzz.js >> /scripts/logs/jd_jxdzz.log 2>&1
 # 环游记
 20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
-# 潮玩儿制躁团
-23 11,12 * * * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
-# 京东超级盒子
-24 3,13 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
-# 选品官
-27 4,14 1-13,22-31 10,11 * node /scripts/jd_xpg.js >> /scripts/logs/jd_xpg.log 2>&1
-# 手机竞猜
-0 2 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 # 牛牛福利
 1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 # 京东签到图形验证
@@ -42,8 +34,6 @@
 17 1,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 东东世界兑换
 3 0,17 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
-# 电器盲盒抽京豆 (11.30?)
-13 3,10,18 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -216,4 +206,4 @@
 # 赚京豆
 1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 京东饭粒
-5 1 * 10,11 * python3 /scripts/mod_scripts/jd_fanli.py >> /scripts/logs/jd_fanli.log 2>&1
+5 1 * 10,11 * python3 /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
