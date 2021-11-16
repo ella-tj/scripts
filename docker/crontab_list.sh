@@ -206,4 +206,4 @@
 # 赚京豆
 1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 京东饭粒
-5 1 * 10,11 * python3 /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
+5 1 * 10,11 * node /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
