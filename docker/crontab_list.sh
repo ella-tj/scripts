@@ -34,6 +34,8 @@
 17 1,15 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 东东世界兑换
 3 0,17 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
+# 东东世界兑换
+37 0,11 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 
 ##############长期活动##############
 # 签到
