@@ -10,8 +10,8 @@ jd_scripts:
   container_name: jd_scripts
   restart: always
   #扫码映射端口
-  ports:
-    - 6789:6789
+  #ports:
+  #  - 6789:6789
   volumes:
     - ./logs:/scripts/logs
   tty: true
@@ -76,6 +76,8 @@ jd_scripts:
     - earn30Pins=
     #发财大赢家助力
     - dyjHelpPins=
+    #京豆换喜豆 默认开启
+    - exjxbeans=true
 
     #####MOD脚本变量区#####
     # 关闭cookie有效检测
