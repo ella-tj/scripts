@@ -1,7 +1,7 @@
 ### update tips  
 
 - 2021.11.30  
-京豆换喜豆`exjxbeans`默认关闭`true`开启  
+京豆换喜豆`exjxbeans`值为`true`运行，默认不运行  
 
 - 2021.11.11  
 京喜单独开团变量`jxgc_kaituan`值为设置开团的账号可填用户名 或 pin  
