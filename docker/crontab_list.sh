@@ -214,4 +214,4 @@
 # 京东饭粒
 15 1 * * * node /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 安静的锦鲤
-5 1 * * * node /scripts/mod_scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
+1 0 * * * node /scripts/mod_scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
