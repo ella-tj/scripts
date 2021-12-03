@@ -20,12 +20,8 @@
 30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 金机奖投票
 33 4,7 8-20 * * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
-# 惊喜大作战
-50 1 * * * node /scripts/jd_jxdzz.js >> /scripts/logs/jd_jxdzz.log 2>&1
 # 环游记
 20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
-# 牛牛福利
-1 0,9,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 # 京东签到图形验证
 16 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 # 积分换话费
@@ -158,8 +154,6 @@
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 芥末签到
 11 22 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
-# 东东超市抢京豆
-11 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 省钱大赢家之翻翻乐
 #20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 
