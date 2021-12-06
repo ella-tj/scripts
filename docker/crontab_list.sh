@@ -206,6 +206,14 @@
 # 赚京豆
 1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 京东饭粒
-15 1 * * * node /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
+#15 1 * * * node /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 # 安静的锦鲤
-1 0 * * * node /scripts/mod_scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
+1 0 * * * python3 /scripts/mod_scripts/jd_angryKoi.py >> /scripts/logs/jd_angryKoi.log 2>&1
+# 发财挖宝内部互助
+30 0,15 * * * python3 /scripts/mod_scripts/jd_wabao_help.py >> /scripts/logs/jd_wabao_help.log 2>&1
+# 发财挖宝
+30 0,15 * * * python3 /scripts/mod_scripts/jd_wabao.py >> /scripts/logs/jd_wabao.log 2>&1
+# 逛好物，赚京豆
+1 0 * * * python3 /scripts/mod_scripts/jd_ghwzjd.py >> /scripts/logs/jd_ghwzjd.log 2>&1
+# 冬香节送福利
+5 15 * * * python3 /scripts/mod_scripts/jd_dongxiang_benefits.py >> /scripts/logs/jd_dongxiang_benefits.log 2>&1
