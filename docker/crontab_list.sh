@@ -205,8 +205,8 @@
 0 0 * 10,11 * python3 /scripts/mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
 # 赚京豆
 1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
-# 京东饭粒
-#15 1 * * * node /scripts/mod_scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
+# 金榜年终奖
+10 0,2 * * * node /scripts/mod_scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 # 安静的锦鲤
 1 0 * * * python3 /scripts/mod_scripts/jd_angryKoi.py >> /scripts/logs/jd_angryKoi.log 2>&1
 # 发财挖宝内部互助
