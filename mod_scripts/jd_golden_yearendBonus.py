@@ -22,7 +22,7 @@ except Exception as e:
 requests.packages.urllib3.disable_warnings()
 
 
-run_send='no'              # yes或no, yes则启用通知推送服务
+run_send='yes'              # yes或no, yes则启用通知推送服务
 jd_golden_yearendBonus_runtask="yes"       # 是否做任务，yes则做，no则不做任务，直接助力开红包,默认yes
 
 
