@@ -206,7 +206,7 @@
 # 金榜年终奖
 0 0 * * * python3 /scripts/mod_scripts/jd_golden_yearendBonus.py >> /scripts/logs/jd_golden_yearendBonus.log 2>&1
 # 安静的锦鲤
-0 0 * * * node /scripts/mod_scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
+0 0 * * * node /scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
 # 发财挖宝内部互助
 30 0,15 * * * python3 /scripts/mod_scripts/jd_wabao_help.py >> /scripts/logs/jd_wabao_help.log 2>&1
 # 发财挖宝
