@@ -186,8 +186,6 @@
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
-# 零食街
-18 7,20 * * * node /scripts/m_lsj.js >> /scripts/logs/m_lsj.log 2>&1
 # 众筹许愿池
 20 6,7 * * * node /scripts/m_wish.js >> /scripts/logs/m_wish.log 2>&1
 # 芯意制造盒
