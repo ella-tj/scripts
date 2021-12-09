@@ -206,7 +206,7 @@
 # 赚京豆
 1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 金榜年终奖
-10 0,2 * * * node /scripts/mod_scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
+0 0 * * * python3 /scripts/mod_scripts/jd_golden_yearendBonus.py >> /scripts/logs/jd_golden_yearendBonus.log 2>&1
 # 安静的锦鲤
 0 0 * * * node /scripts/mod_scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
 # 发财挖宝内部互助
@@ -217,3 +217,5 @@
 1 0 * * * python3 /scripts/mod_scripts/jd_ghwzjd.py >> /scripts/logs/jd_ghwzjd.log 2>&1
 # 冬香节送福利
 5 15 * * * python3 /scripts/mod_scripts/jd_dongxiang_benefits.py >> /scripts/logs/jd_dongxiang_benefits.log 2>&1
+# 京东小魔方
+31 8 * * * node /scripts/mod_scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
