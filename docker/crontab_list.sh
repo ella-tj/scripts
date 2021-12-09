@@ -202,7 +202,7 @@
 # 全民抢京豆
 0 0 * 10,11 * python3 /scripts/mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
 # 赚京豆
-1,25,50 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
+0,30 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 金榜年终奖
 0 0 * * * python3 /scripts/mod_scripts/jd_golden_yearendBonus.py >> /scripts/logs/jd_golden_yearendBonus.log 2>&1
 # 安静的锦鲤
