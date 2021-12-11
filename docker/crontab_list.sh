@@ -217,3 +217,5 @@
 5 15 * * * python3 /scripts/mod_scripts/jd_dongxiang_benefits.py >> /scripts/logs/jd_dongxiang_benefits.log 2>&1
 # 京东小魔方
 31 8 * * * node /scripts/mod_scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
+# 发现好货
+27 10,16 * 12 * node /scripts/mod_scripts/jd_fxhh.js >> /scripts/logs/jd_fxhh.log 2>&1
