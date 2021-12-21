@@ -124,6 +124,8 @@
 30 2,9 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 领券中心签到
 19 7 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
+# 京东特价--翻翻乐
+27 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 ##############京东-玩一玩任务区##############
 #京东健康社区
 13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
