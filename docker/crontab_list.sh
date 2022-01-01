@@ -224,3 +224,5 @@
 31 8 * * * node /scripts/mod_scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
 # 发现好货
 27 10,16 * 12 * node /scripts/mod_scripts/jd_fxhh.js >> /scripts/logs/jd_fxhh.log 2>&1
+# 星店长
+1 10 * * * python3 /scripts/mod_scripts/jd_xdz.py >> /scripts/logs/jd_xdz.log 2>&1
