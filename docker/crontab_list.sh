@@ -230,3 +230,7 @@
 40 0,2 * * * node /scripts/mod_scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 年货签到
 14 3,23 * * * node /scripts/mod_scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+# 京东金榜
+11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
+# 京东自动评价
+1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
