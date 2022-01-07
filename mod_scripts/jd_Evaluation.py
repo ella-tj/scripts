@@ -1,5 +1,5 @@
-# !/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*
 # @Time : 2021/10/30 10:58
 # 京东自动评价
 '''
