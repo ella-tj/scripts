@@ -234,3 +234,5 @@
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 # 京东自动评价
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
+# 京东金榜
+31 6 * * * node /scripts/mod_scripts/jd_mofang_ex.js >> /scripts/logs/jd_mofang_ex.log 2>&1
