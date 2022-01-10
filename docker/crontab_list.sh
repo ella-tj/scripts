@@ -182,7 +182,7 @@
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 试用
-30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
+#30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
 #赚30元
 #0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
 # 升级赚京豆
