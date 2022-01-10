@@ -92,8 +92,6 @@
 #0 0 * * * node /scripts/jd_cash_exchange.js >> /scripts/logs/jd_cash_exchange.log 2>&1
 # 闪购盲盒
 47 8,22 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
-# 京东秒秒币
-10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 #美丽研究院
 1 7,14,22 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东保价
@@ -229,10 +227,16 @@
 # 众筹许愿池
 40 0,2 * * * node /scripts/mod_scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 年货签到
-14 3,23 * * * node /scripts/mod_scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+23 7 * * * node /scripts/mod_scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 # 京东金榜
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 # 京东自动评价
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 京东金榜
 31 6 * * * node /scripts/mod_scripts/jd_mofang_ex.js >> /scripts/logs/jd_mofang_ex.log 2>&1
+# 炸年兽
+13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
+# 年货节红包
+0 0,20 * * * node /scripts/mod_scripts//jd_2022red.js >> /scripts/logs//jd_2022red.log 2>&1
+# 城城分现金助力
+0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
