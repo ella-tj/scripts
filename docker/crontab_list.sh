@@ -242,3 +242,7 @@
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
 # 财富岛兑换红包
 50 59 * * * * python3 /scripts/mod_scripts/jx_cfd_dh.py >> /scripts/logs/jx_cfd_dh.log 2>&1
+# 59-20
+59 59 21 * * * python3 /scripts/mod_scripts/ddquan.py >> /scripts/logs/ddquan.log 2>&1
+# 500-100
+59 59 20 * * * python3 /scripts/mod_scripts/op.py >> /scripts/logs/op.log 2>&1
