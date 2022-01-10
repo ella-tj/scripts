@@ -240,3 +240,5 @@
 0 0,20 * * * node /scripts/mod_scripts//jd_2022red.js >> /scripts/logs//jd_2022red.log 2>&1
 # 城城分现金助力
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
+# 财富岛兑换红包
+50 59 * * * * python3 /scripts/mod_scripts/jx_cfd_dh.py >> /scripts/logs/jx_cfd_dh.log 2>&1
