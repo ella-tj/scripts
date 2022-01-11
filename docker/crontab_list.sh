@@ -17,11 +17,9 @@
 #点点券
 35 1,2,3, * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 特物Z|万物皆可国创
-30 11 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+13 10,14,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 # 金机奖投票
 33 4,7 8-20 * * node /scripts/jd_golden_machine.js >> /scripts/logs/jd_golden_machine.log 2>&1
-# 环游记
-20 * * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 # 京东签到图形验证
 16 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 # 积分换话费
@@ -122,8 +120,6 @@
 30 2,9 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 领券中心签到
 19 7 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
-# 京东特价--翻翻乐
-27 0,6-23 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 ##############京东-玩一玩任务区##############
 #京东健康社区
 13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
@@ -151,8 +147,6 @@
 30 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-# 集魔方
-11 10 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 # 芥末签到
@@ -232,17 +226,18 @@
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 # 京东自动评价
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
-# 京东金榜
-31 6 * * * node /scripts/mod_scripts/jd_mofang_ex.js >> /scripts/logs/jd_mofang_ex.log 2>&1
 # 炸年兽
 13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
 # 年货节红包
-0 0,20 * * * node /scripts/mod_scripts//jd_2022red.js >> /scripts/logs//jd_2022red.log 2>&1
+0 0,20 * * * node /scripts/mod_scripts/jd_2022red.js >> /scripts/logs/jd_2022red.log 2>&1
 # 城城分现金助力
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
 # 财富岛兑换红包
-50 59 * * * * python3 /scripts/mod_scripts/jx_cfd_dh.py >> /scripts/logs/jx_cfd_dh.log 2>&1
-# 59-20
-59 59 21 * * * python3 /scripts/mod_scripts/ddquan.py >> /scripts/logs/ddquan.log 2>&1
-# 500-100
-59 59 20 * * * python3 /scripts/mod_scripts/op.py >> /scripts/logs/op.log 2>&1
+#50 59 * * * * python3 /scripts/mod_scripts/jx_cfd_dh.py >> /scripts/logs/jx_cfd_dh.log 2>&1
+# 京东美妆签到
+10 6 * * * node /scripts/mod_scripts/jd_sign_graphics1.js >> /scripts/logs/jd_sign_graphics1.log 2>&1
+# 头文字J
+10 8 * * * node /scripts/mod_scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
+# 头文字J助力
+10 3 * * * node /scripts/mod_scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
+
