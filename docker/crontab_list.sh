@@ -240,4 +240,5 @@
 10 8 * * * node /scripts/mod_scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
 # 头文字J助力
 10 3 * * * node /scripts/mod_scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
-
+# 京东超级盒子
+21 3,13 * * * node /scripts/mod_scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
