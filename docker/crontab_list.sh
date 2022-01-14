@@ -62,8 +62,6 @@
 11 1 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东排行榜
 21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
-# 天天提鹅
-28 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 小鸽有礼
 13 1,22,23 * * * node /scripts/jd_daily_lottery.js >> /scripts/logs/jd_daily_lottery.log 2>&1
 # 金融养猪
@@ -228,8 +226,6 @@
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 炸年兽
 13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
-# 年货节红包
-0 0,20 * * * node /scripts/mod_scripts/jd_2022red.js >> /scripts/logs/jd_2022red.log 2>&1
 # 城城分现金助力
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
 # 财富岛兑换红包
@@ -242,3 +238,7 @@
 10 3 * * * node /scripts/mod_scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 # 京东超级盒子
 21 3,13 * * * node /scripts/mod_scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
+# 年货节红包
+5 0,12,20 * * * node /scripts/mod_scripts/jd_nhRed.js >> /scripts/logs/jd_nhRed.log 2>&1
+# 京喜天天压岁钱
+45 0,16 * * * node /scripts/mod_scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
