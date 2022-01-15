@@ -242,3 +242,7 @@
 5 0,12,20 * * * node /scripts/mod_scripts/jd_nhRed.js >> /scripts/logs/jd_nhRed.log 2>&1
 # 京喜天天压岁钱
 45 0,16 * * * node /scripts/mod_scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
+# 白条抽奖
+9 9 13-31,1-7 1,2 * node /scripts/mod_scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
+# 轩辕虎越,风生水起
+23 3,16 6-31 1 * node /scripts/mod_scripts/jd_xyhy.js >> /scripts/logs/jd_xyhy.log 2>&1
