@@ -246,3 +246,7 @@
 9 9 13-31,1-7 1,2 * node /scripts/mod_scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 # 轩辕虎越,风生水起
 23 3,16 6-31 1 * node /scripts/mod_scripts/jd_xyhy.js >> /scripts/logs/jd_xyhy.log 2>&1
+# 萌虎摇摇乐
+45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
+# 狂撒3亿签到
+45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
