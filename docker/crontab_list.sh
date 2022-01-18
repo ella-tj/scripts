@@ -228,8 +228,10 @@
 13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
 # 城城分现金助力
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
-# 财富岛兑换红包
-#50 59 * * * * python3 /scripts/mod_scripts/jx_cfd_dh.py >> /scripts/logs/jx_cfd_dh.log 2>&1
+# 东东农场-助力
+0 0 * * * python3 /scripts/mod_scripts/jd_ddnc_help.py >> /scripts/logs/jd_ddnc_help.log 2>&1
+# 东东萌宠-助力
+0 0 * * * python3 /scripts/mod_scripts/jd_ddmc_help.py >> /scripts/logs/jd_ddmc_help.log 2>&1
 # 京东美妆签到
 10 6 * * * node /scripts/mod_scripts/jd_sign_graphics1.js >> /scripts/logs/jd_sign_graphics1.log 2>&1
 # 头文字J
