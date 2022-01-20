@@ -252,5 +252,3 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 # 狂撒3亿签到
 45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
-# 京东超市年货日历
-33 4,16 * * * node /scripts/mod_scripts/jd_year.js >> /scripts/logs/jd_year.log 2>&1
