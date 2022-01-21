@@ -154,7 +154,7 @@
 
 ##############京喜脚本任务区##############
 # 京喜签到
-5 3 * * * node /scripts/jd_jxqd.js >> /scripts/logs/jd_jxqd.log 2>&1
+20 1,5 * * * node /scripts/jx_sign.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
 # 京喜财富岛互助
@@ -252,3 +252,5 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 # 狂撒3亿签到
 45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
+# 点鞭炮赢京豆
+10 9,21 * * * node /scripts/mod_scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
