@@ -124,7 +124,7 @@
 #京东健康社区收集健康能量
 5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
 # 东东农场
-15 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+15 9,15,21 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 # 京东宠汪汪
 #15 1-23/2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 京东宠汪汪喂食
@@ -225,7 +225,7 @@
 # 京东自动评价
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 炸年兽
-13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
+#13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
 # 城城分现金助力
 0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
 # 东东农场-助力
