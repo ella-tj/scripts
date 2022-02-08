@@ -100,8 +100,6 @@
 #10 6,7 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 #京东直播（又回来了）
 30-50/5 12,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
-# 幸运大转盘
-10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 领金贴
 5 6 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 送豆得豆
@@ -161,22 +159,24 @@
 18 0,1,9,14,18 * * * node /scripts/jd_cfd_help.js >> /scripts/logs/jd_cfd_help.log 2>&1
 # 京喜财富岛提现
 59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
+# 京喜财富岛合成珍珠
+35 1-5 * * * node /scripts/jd_cfd_pearl.js >> /scripts/logs/jd_cfd_pearl.log 2>&1
+# 财富岛珍珠兑换
+59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜农场
 30 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 京喜牧场
 15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
-# 京喜领88元红包
-4 2,10 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 
 ##############mod脚本任务区##############
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
-# 试用
-#30 10 * * * node /scripts/m_try.js >> /scripts/logs/m_try.log 2>&1
-#赚30元
-#0 0,6 * * * node /scripts/m_earn30.js >> /scripts/logs/m_earn30.log 2>&1
+# 秒秒币
+40 6 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
+# 2022击鼓拿福利助力
+15 9,22 1-14 2 * node /scripts/jd_HappyNewYear_Shares.js >> /scripts/logs/jd_HappyNewYear_Shares.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
@@ -224,10 +224,6 @@
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 # 京东自动评价
 1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
-# 炸年兽
-#13 0-23/5 * * * node /scripts/mod_scripts/jd_zns.js >> /scripts/logs/jd_zns.log 2>&1
-# 城城分现金助力
-0 0 9-21 1 * python3 /scripts/mod_scripts/jd_ccfxj_help.py >> /scripts/logs/jd_ccfxj_help.log 2>&1
 # 东东农场-助力
 0 0 * * * python3 /scripts/mod_scripts/jd_ddnc_help.py >> /scripts/logs/jd_ddnc_help.log 2>&1
 # 东东萌宠-助力
@@ -240,8 +236,6 @@
 10 3 * * * node /scripts/mod_scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 # 京东超级盒子
 21 3,13 * * * node /scripts/mod_scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
-# 年货节红包
-5 0,12,20 * * * node /scripts/mod_scripts/jd_nhRed.js >> /scripts/logs/jd_nhRed.log 2>&1
 # 京喜天天压岁钱
 45 0,16 * * * node /scripts/mod_scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
 # 白条抽奖
@@ -252,5 +246,3 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 # 狂撒3亿签到
 45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
-# 点鞭炮赢京豆
-10 9,21 * * * node /scripts/mod_scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
