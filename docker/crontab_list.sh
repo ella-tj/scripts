@@ -155,6 +155,8 @@
 20 1,5 * * * node /scripts/jx_sign.js >> /scripts/logs/jd_jxqd.log 2>&1
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
+# 京喜财富岛捡贝壳
+35 2-23/2 * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
 # 京喜财富岛互助
 18 0,1,9,14,18 * * * node /scripts/jd_cfd_help.js >> /scripts/logs/jd_cfd_help.log 2>&1
 # 京喜财富岛提现
@@ -163,6 +165,8 @@
 35 1-5 * * * node /scripts/jd_cfd_pearl.js >> /scripts/logs/jd_cfd_pearl.log 2>&1
 # 财富岛珍珠兑换
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
+# 财富岛兑换红包
+58 * * * * node /scripts/jd_cfd.hb.js >> /scripts/logs/jd_cfd.hb.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜农场
@@ -170,7 +174,9 @@
 # 京喜牧场
 15 0,12,22 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 
-##############mod脚本任务区##############
+##############其它脚本任务区##############
+# 京东签到
+48 9,22 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_sign.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 秒秒币
@@ -182,7 +188,7 @@
 # 全民摸冰
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 # 众筹许愿池
-20 6,7 * * * node /scripts/m_wish.js >> /scripts/logs/m_wish.log 2>&1
+20 6,7 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 芯意制造盒
 #50 0 * * * node /scripts/m_xyzzh.js >> /scripts/logs/m_xyzzh.log 2>&1
 # 东东世界
