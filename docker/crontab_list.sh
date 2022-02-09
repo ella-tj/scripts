@@ -166,7 +166,7 @@
 # 财富岛珍珠兑换
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 财富岛兑换红包
-58 * * * * node /scripts/jd_cfd.hb.js >> /scripts/logs/jd_cfd.hb.log 2>&1
+#58 * * * * node /scripts/jd_cfd.hb.js >> /scripts/logs/jd_cfd.hb.log 2>&1
 # 京喜工厂
 50 1-23/1 * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜农场
