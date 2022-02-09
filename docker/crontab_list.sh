@@ -203,7 +203,7 @@
 # 全民抢京豆
 0 0 * 10,11 * python3 /scripts/mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
 # 赚京豆
-0,30 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
+#0,30 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
 # 金榜年终奖
 0 0 * * * python3 /scripts/mod_scripts/jd_golden_yearendBonus.py >> /scripts/logs/jd_golden_yearendBonus.log 2>&1
 # 安静的锦鲤
@@ -214,22 +214,16 @@
 30 0,15 * * * python3 /scripts/mod_scripts/jd_wabao.py >> /scripts/logs/jd_wabao.log 2>&1
 # 逛好物，赚京豆
 1 0 * * * python3 /scripts/mod_scripts/jd_ghwzjd.py >> /scripts/logs/jd_ghwzjd.log 2>&1
-# 冬香节送福利
-5 15 * * * python3 /scripts/mod_scripts/jd_dongxiang_benefits.py >> /scripts/logs/jd_dongxiang_benefits.log 2>&1
 # 京东小魔方
 31 8 * * * node /scripts/mod_scripts/jd_mf_exchange.js >> /scripts/logs/jd_mf_exchange.log 2>&1
 # 发现好货
 27 10,16 * 12 * node /scripts/mod_scripts/jd_fxhh.js >> /scripts/logs/jd_fxhh.log 2>&1
-# 星店长
-1 10 * * * python3 /scripts/mod_scripts/jd_xdz.py >> /scripts/logs/jd_xdz.log 2>&1
-# 众筹许愿池
-40 0,2 * * * node /scripts/mod_scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 年货签到
 23 7 * * * node /scripts/mod_scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 # 京东金榜
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 # 京东自动评价
-1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
+#1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 东东农场-助力
 0 0 * * * python3 /scripts/mod_scripts/jd_ddnc_help.py >> /scripts/logs/jd_ddnc_help.log 2>&1
 # 东东萌宠-助力
@@ -246,8 +240,6 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
 # 白条抽奖
 9 9 13-31,1-7 1,2 * node /scripts/mod_scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
-# 轩辕虎越,风生水起
-23 3,16 6-31 1 * node /scripts/mod_scripts/jd_xyhy.js >> /scripts/logs/jd_xyhy.log 2>&1
 # 萌虎摇摇乐
 45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 # 狂撒3亿签到
