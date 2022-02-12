@@ -240,3 +240,7 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 # 狂撒3亿签到
 45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
+# 健康社区-种植园自动任务
+23 11,13,21 * * * python3 /scripts/mod_scripts/jd_health_plant.py >> /scripts/logs/jd_health_plant.log 2>&1
+# 化妆馆-种植园自动任务
+20 9,11,15,21 * * * python3 /scripts/mod_scripts/jd_beauty_plant.py >> /scripts/logs/jd_beauty_plant.log 2>&1
