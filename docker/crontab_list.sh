@@ -187,12 +187,14 @@
 6 9,12 * * * node /scripts/m_mb.js >> /scripts/logs/m_mb.log 2>&1
 # 众筹许愿池
 20 6,7 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-# 芯意制造盒
-#50 0 * * * node /scripts/m_xyzzh.js >> /scripts/logs/m_xyzzh.log 2>&1
-# 东东世界
-#20 6,7 * * * node /scripts/m_ddworld.js >> /scripts/logs/m_ddworld.log 2>&1
-# 东东玩家
-#20 0 * * * node /scripts/m_ddwj.js >> /scripts/logs/m_ddwj.log 2>&1
+# 领券中心签到
+10 3,8 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
+# 美丽研究院-种植园
+38 6-20/3 * * * node /scripts/jd_xinruimz.js >> /scripts/logs/jd_xinruimz.log 2>&1
+# 微信签到领红包
+12 5 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
+# 赚京豆-瓜分京豆脚本
+30 0,17 * * * node /scripts/jd_zjd.js >> /scripts/logs/jd_zjd.log 2>&1
 ##############mod_scripts##############
 # 东东超市商品兑换
 59 23 * * * python3 /scripts/mod_scripts/jd_blueCoin.py >> /scripts/logs/jd_blueCoin.log 2>&1
@@ -242,5 +244,3 @@
 45 0,16 * * * node /scripts/mod_scripts/jd_ms_sign.js >> /scripts/logs/jd_ms_sign.log 2>&1
 # 健康社区-种植园自动任务
 23 11,13,21 * * * python3 /scripts/mod_scripts/jd_health_plant.py >> /scripts/logs/jd_health_plant.log 2>&1
-# 化妆馆-种植园自动任务
-20 9,11,15,21 * * * python3 /scripts/mod_scripts/jd_beauty_plant.py >> /scripts/logs/jd_beauty_plant.log 2>&1
