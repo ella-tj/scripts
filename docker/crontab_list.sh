@@ -179,8 +179,6 @@
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
 # 秒秒币
 40 6 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
-# 2022击鼓拿福利助力
-15 9,22 1-14 2 * node /scripts/jd_HappyNewYear_Shares.js >> /scripts/logs/jd_HappyNewYear_Shares.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
@@ -195,6 +193,8 @@
 12 5 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
 # 赚京豆-瓜分京豆脚本
 30 0,17 * * * node /scripts/jd_zjd.js >> /scripts/logs/jd_zjd.log 2>&1
+# 京东饭粒
+40 0,9,17 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 ##############mod_scripts##############
 # 东东超市商品兑换
 59 23 * * * python3 /scripts/mod_scripts/jd_blueCoin.py >> /scripts/logs/jd_blueCoin.log 2>&1
