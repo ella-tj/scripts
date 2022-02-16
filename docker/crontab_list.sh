@@ -195,6 +195,8 @@
 30 0,17 * * * node /scripts/jd_zjd.js >> /scripts/logs/jd_zjd.log 2>&1
 # 京东饭粒
 40 0,9,17 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
+# 京东自动评价
+15 10 1,15 * * python3 /scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 ##############mod_scripts##############
 # 东东超市商品兑换
 59 23 * * * python3 /scripts/mod_scripts/jd_blueCoin.py >> /scripts/logs/jd_blueCoin.log 2>&1
@@ -220,8 +222,6 @@
 23 7 * * * node /scripts/mod_scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 # 京东金榜
 11 6 * * * node /scripts/mod_scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
-# 京东自动评价
-#1 10 * * * python3 /scripts/mod_scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 东东农场-助力
 0 0 * * * python3 /scripts/mod_scripts/jd_ddnc_help.py >> /scripts/logs/jd_ddnc_help.log 2>&1
 # 东东萌宠-助力
@@ -234,8 +234,6 @@
 10 3 * * * node /scripts/mod_scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 # 京东超级盒子
 21 3,13 * * * node /scripts/mod_scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
-# 京喜天天压岁钱
-45 0,16 * * * node /scripts/mod_scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
 # 白条抽奖
 9 9 13-31,1-7 1,2 * node /scripts/mod_scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 # 萌虎摇摇乐
