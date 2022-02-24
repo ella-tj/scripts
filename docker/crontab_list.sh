@@ -199,6 +199,8 @@
 15 10 1,15 * * python3 /scripts/jd_Evaluation.py >> /scripts/logs/jd_Evaluation.log 2>&1
 # 极速版赚金币邀请
 25 1,13 * * * node /scripts/jd_zjb.js >> /scripts/logs/jd_zjb.log 2>&1
+# 极速版-见缝插针
+4 3 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 ##############mod_scripts##############
 # 东东超市商品兑换
 59 23 * * * python3 /scripts/mod_scripts/jd_blueCoin.py >> /scripts/logs/jd_blueCoin.log 2>&1
