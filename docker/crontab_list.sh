@@ -159,10 +159,6 @@
 18 0,1,9,14,18 * * * node /scripts/jd_cfd_help.js >> /scripts/logs/jd_cfd_help.log 2>&1
 # 京喜财富岛提现
 59 11,12,23 * * * node /scripts/jd_cfdtx.js >> /scripts/logs/jd_cfdtx.log 2>&1
-# 京喜财富岛合成珍珠
-35 1-5 * * * node /scripts/jd_cfd_pearl.js >> /scripts/logs/jd_cfd_pearl.log 2>&1
-# 财富岛珍珠兑换
-59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 财富岛兑换红包
 #58 * * * * node /scripts/jd_cfd.hb.js >> /scripts/logs/jd_cfd.hb.log 2>&1
 # 京喜工厂
@@ -177,8 +173,6 @@
 48 9,22 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_sign.log 2>&1
 # 东东电竞经理
 15 10 * * * node /scripts/m_djjl.js >> /scripts/logs/m_djjl.log 2>&1
-# 秒秒币
-40 6 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 升级赚京豆
 21 9 * * * node /scripts/m_MMdou.js >> /scripts/logs/m_MMdou.log 2>&1
 # 全民摸冰
@@ -210,8 +204,6 @@
 0 0 * 10,11 * python3 /scripts/mod_scripts/jd_qjd.py >> /scripts/logs/jd_qjd.log 2>&1
 # 赚京豆
 #0,30 0 * * * python3 /scripts/mod_scripts/jd_zjd.py >> /scripts/logs/jd_zjd.log 2>&1
-# 安静的锦鲤
-0 0 * * * node /scripts/jd_angryKoi.js >> /scripts/logs/jd_angryKoi.log 2>&1
 # 发财挖宝内部互助
 30 0,15 * * * python3 /scripts/mod_scripts/jd_wabao_help.py >> /scripts/logs/jd_wabao_help.log 2>&1
 # 发财挖宝
